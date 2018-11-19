@@ -36,7 +36,7 @@ tags: [web, jekyll]
   - [Disqus](https://disqus.com/)
   - [Google Analytics](https://analytics.google.com/analytics/web/)
   - [Google Fonts](https://fonts.google.com/)
-  - [SVG Icons](https://icomoon.io/)
+  - [Ionicons](http://ionicons.com/)
 
 #### Used tools
   - [Autoprefixer](https://github.com/postcss/autoprefixer)
@@ -49,9 +49,7 @@ tags: [web, jekyll]
   - [Kickster](https://kickster.nielsenramon.com/)
   - [Retina.js](https://imulus.github.io/retinajs/)
   - [STACSS](https://stacss.nielsenramon.com/)
-  - [Travis](https://travis-ci.org/)
   - [Yarn](https://yarnpkg.com)
-  - [Zooming](https://github.com/kingdido999/zooming/)
 
 {% include image.html path="documentation/enlarge.gif" path-detail="documentation/enlarge@2x.gif" alt="Enlarge image feature" %}
 
