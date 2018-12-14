@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Scaling server with Socket.Io (3 / 3)
-tags: [Node, web]
+tags: [Node, web, project]
 
 ---
 

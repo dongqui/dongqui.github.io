@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Scaling server with Socket.Io (1 / 3)
-tags: [Node, web]
+tags: [Node, web, project]
 
 ---
 이번에 위치 기반 채팅 어플리케이션 프로젝트를 진행하면서, socket과 서버 확장을 다룰 기회가 있었다.
