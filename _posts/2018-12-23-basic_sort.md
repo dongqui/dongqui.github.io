@@ -6,8 +6,8 @@ tags: [알고리즘]
 
 ## Bubble / Insertion / Merge/ Quick / Selection
 
-
-<br><br>
+그냥 한 번쯤은 구현 해보고 싶었다.
+<br>
 ## Bubble sort
 {% highlight javascript %}
 function bubbleSort(a) {
