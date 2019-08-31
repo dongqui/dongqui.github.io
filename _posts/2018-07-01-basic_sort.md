@@ -4,7 +4,7 @@ title: "Basic sorting algorithms"
 tags: [알고리즘]
 ---
 
-## Bubble / Insertion / Merge/ Quick / Selection
+<strong> Bubble / Insertion / Merge/ Quick / Selection </strong>
 
 그냥 한 번쯤은 구현 해보고 싶었다.
 <br>

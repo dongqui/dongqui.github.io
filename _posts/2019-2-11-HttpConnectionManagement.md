@@ -4,8 +4,8 @@ title: "Http connection management"
 tags: [네트워크]
 ---
 
-<h3>대표적인 HTTP connection 모델들: <br>
-short-lived connections, persistent connections, HTTP pipelining</h3>
+<strong>대표적인 HTTP connection 모델들: <br>
+short-lived connections, persistent connections, HTTP pipelining</strong>
 
 <br>
 <h3>Short lived connection</h3>
