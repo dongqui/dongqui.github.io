@@ -4,23 +4,24 @@ title: "AWS lambda tip: cold start"
 tags: [aws]
 ---
 
-labmda가 요청을 받았을 때, 코드가 실행 될 컨테이너가 존재하지 않으면 컨테이너를 새로 생성 후 코드를 실행하게 되는데, 여기서 지연이 발생한다. <br/>
-Cold start 발생 빈도수, 지연 시간은 각각의 상황에 따라 상이하다.<br/>
-(VPC 설정 유무, memory, code size...) <br/>
+labmda가 요청을 받았을 때 코드가 실행 될 컨테이너가 존재하지 않으면 컨테이너를 새로 생성 후 코드를 실행하게 되는데, 여기서 지연이 발생한다.
+이러한 Cold start 발생 빈도수와 지연 시간은 각각의 상황에 따라 상이하다.(VPC 설정 유무, memory, code size...) <br/>
 
 
 사실상 굳이 신경쓰지 않아도 될 만큼의 지연이 발생하는 경우, 그냥 사용하면 된다.<br/>
 <br/>
 아래는 그런 경우가 아닐 때의 해결방법으로, AWS 시니어 개발자 [Chris Munns](https://twitter.com/chrismunns)의 발표 내용 요약본 중 생성된 람다 컨테이너를 계속 유지하는 Best practice에 관한 이야기다.<br/>
 <br/>
-기본적인 내용은, 한 번 생성된 컨테이너가 닫히지 않도록 CloudWatch를 이용해서 계속 핑을 하나씩 보내는 것이다. (다만, 이미 존재하는 Lambda 컨테이가 있더라도 요청이 그 컨테이너로 가는 것을 100% 보장하지는 않고, 그렇게 되도록 '노력'한다라고 aws측에서 이야기 함) <br/>
+기본적인 내용은 한 번 생성된 컨테이너가 닫히지 않도록 CloudWatch를 이용해서 계속 핑을 하나씩 보내는 것이다. <br>
+(다만, 이미 존재하는 Lambda 컨테이가 있더라도 요청이 그 컨테이너로 가는 것을 100% 보장하지는 않고, 그렇게 되도록 '노력'한다라고 aws측에서 이야기 함) <br/>
 그리고 다음의 조건을 충족시킬 때 가장 좋다!
 - 핑을 보낼 때 5분 보다 더 긴 간격으로 보낼 것
 - API Gateaway 같은 거 거치지 말고 직행으로 Lambda를 실행시킬 것
 - warming 요청인 것을 payload에서 확인 할 수 있을 것
 - warming ping일 경우 본래의 람다 코드를 다 실행 시키지말것
 
-### 출처: [https://www.jeremydaly.com/15-key-takeaways-from-the-serverless-talk-at-aws-startup-day/](https://www.jeremydaly.com/15-key-takeaways-from-the-serverless-talk-at-aws-startup-day/)
+### Resource
+[https://www.jeremydaly.com/15-key-takeaways-from-the-serverless-talk-at-aws-startup-day/](https://www.jeremydaly.com/15-key-takeaways-from-the-serverless-talk-at-aws-startup-day/)
 <br/>
 <br/>
 
@@ -88,5 +89,5 @@ n개의 concurrency를 보장하기 위해, delay()함수를 이용하는 것을
 예를 들면 5개의 람다를 인보크 시켜야 하는데, 1번 람다가 생성 된 후, 2,3,4,5번의 람다가 생성되지 않고 계속 1번으로 요청이 들어가는 경우가 있을 수 있다.<br/>
 그걸 방지하기 위해 나머지 2, 3, 4, 5번의 람다가 생성 될 때 까지 delay()를 사용해 바쁘게 굴려 다른 요청을 받지 못하게 한다. 
 
-자세한 내용은 아래에!<br/>
+### Resource
 [https://www.jeremydaly.com/lambda-warmer-optimize-aws-lambda-function-cold-starts/](https://www.jeremydaly.com/lambda-warmer-optimize-aws-lambda-function-cold-starts/)
