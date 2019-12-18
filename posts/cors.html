@@ -3,19 +3,19 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Dongjin | The high quality, completely customizable and 100% free blog template for Jekyll</title>
+  <title>Dongjin | CORS</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <meta property="og:title" content="The high quality, completely customizable and 100% free blog template for Jekyll">
+  <meta property="og:title" content="CORS">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://dongqui.github.io//about">
+  <meta property="og:url" content="https://dongqui.github.io//posts/cors">
   <meta property="og:description" content="">
   <meta property="og:site_name" content="Dongjin">
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:url" content="https://dongqui.github.io//about">
-  <meta name="twitter:title" content="The high quality, completely customizable and 100% free blog template for Jekyll">
+  <meta name="twitter:url" content="https://dongqui.github.io//posts/cors">
+  <meta name="twitter:title" content="CORS">
   <meta name="twitter:description" content="">
 
   
@@ -160,19 +160,85 @@
   </ul>
 
 
-        <div class="about scrollappear">
-  <img src="/assets/about-2cdb6eff3b793c005b266304d75b24ec83fb83e5ce1133587094c80747cf55af.jpg" alt="About Nielsen Ramon header image" />
-  <h1>About me</h1>
-  <p>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-    non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-  </p>
+        <article class="article scrollappear">
+          <header class="article-header">
+            <h1>CORS</h1>
+            <p></p>
+            <div class="article-list-footer">
+  <span class="article-list-date">
+    July 7, 2018
+  </span>
+  <span class="article-list-divider">-</span>
+  <span class="article-list-minutes">
+    
+    
+      2 minute read
+    
+  </span>
+  <span class="article-list-divider">-</span>
+  <div class="article-list-tags">
+    
+      
+      <a href="/tag/web" title="See all posts with tag 'Web'">Web</a>
+    
+  </div>
 </div>
+          </header>
 
+          <div class="article-content">
+            <p><strong>Cross-Origin Resource Sharing</strong></p>
+
+<p>기본적으로 브라우저는 보안상의 이유로, 클라이언트가 존재하는 도메인과 다른 도메인에 존재하는 서버로 접근하는 것을 막는다.
+<br /><br />
+그러나 현대에서는 css, font, Image등을 다른 서버로부터 받아오는 경우가 허다하고, 일반적으로 쓰여지는 Rest API 또한 하나의 어플리케이션만을 지원하지 않는다. 이러한 리소스들을 사용할 때, 서버에서 헤더 값을 통해 cross-domain을 허용해주지 않으면 브라우저에서 오류가 발생한다.
+<br /><br />
+CORS는 추가적인 HTTP 헤더 값들을 통해 브라우저에게 괜찮다고, 접근해도 된다고 안심시켜주는 메커니즘이라고 볼 수 있겠다.
+<br /><br />
+<br />
+CORS는 크게 두가지 경우로 나뉜다. Preflighted requests 같은 경우에는, 서버로 요청을 보내기 전에 OPTIONS TYPE의 요청을 먼저 한 번 보낸 후에 본격적인 요청을 시작한다.</p>
+
+<ul>
+  <li>
+    <p><strong>Simple requests</strong>:  This use case applies if we use HTTP GET, HEAD and POST methods. In the case of POST methods, only content types with the following values are supported: text/plain, application/x-www-form-urlencoded and multipart/form-data.</p>
+  </li>
+  <li>
+    <p><strong>Preflighted requests</strong>:  When the ‘simple requests’ use case doesn’t apply, a first request (with the HTTP OPTIONS method) is made to check what can be done in the context of cross-domain requests.</p>
+  </li>
+</ul>
+
+<p>헤더에 추가해주는 것들</p>
+<ul>
+  <li><strong>Origin</strong>: this header is used by the client to specify which domain the request is executed from. The server uses this hint to authorize, or not, the cross-domain request.</li>
+  <li><strong>Access-Control-Request-Method</strong>: with in the context of preflighted requests, the OPTIONS request sends this header to check if the target method is allowed in the context of cross-domain requests.</li>
+  <li><strong>Access-Control-Request-Headers</strong>: with in the context of preflighted requests, the OPTIONS request sends this header to check if headers are allowed for the target method in the context of cross-domain requests.</li>
+  <li><strong>Access-Control-Allow-Credentials</strong>: this specifies if credentials are supported for cross-domain requests.</li>
+  <li><strong>Access-Control-Allow-Methods</strong>: the server uses this header to tell which headers are authorized in the context of the request. This is typically used in the context of preflighted requests.</li>
+  <li><strong>Access-Control-Allow-Origin</strong>: the server uses this header to tell which domains are authorized for the request.</li>
+  <li><strong>Access-Control-Allow-Headers</strong>: the server uses this header to tell which headers are authorized in the context of the request. This is typically used in the context of preflighted requests.
+<br />
+<br />
+    <h3 id="resource">Resource</h3>
+  </li>
+</ul>
+
+<p><a href="https://www.youtube.com/watch?v=zoSJ3bNGPp0">https://www.youtube.com/watch?v=zoSJ3bNGPp0</a>
+<a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS#Preflighted_requests">https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS#Preflighted_requests</a>
+<a href="http://restlet.com/company/blog/2015/12/15/understanding-and-using-cors/">http://restlet.com/company/blog/2015/12/15/understanding-and-using-cors/</a></p>
+
+          </div>
+          <div class="article-share">
+            
+            
+            <a href="https://twitter.com/home?status=CORS%20-%20https://dongqui.github.io//posts/cors" title="Share on Twitter" rel="noreferrer noopener" target="_blank">
+              <svg viewBox="0 0 512 512"><path d="M492 109.5c-17.4 7.7-36 12.9-55.6 15.3 20-12 35.4-31 42.6-53.6 -18.7 11.1-39.4 19.2-61.5 23.5C399.8 75.8 374.6 64 346.8 64c-53.5 0-96.8 43.4-96.8 96.9 0 7.6 0.8 15 2.5 22.1 -80.5-4-151.9-42.6-199.6-101.3 -8.3 14.3-13.1 31-13.1 48.7 0 33.6 17.2 63.3 43.2 80.7C67 210.7 52 206.3 39 199c0 0.4 0 0.8 0 1.2 0 47 33.4 86.1 77.7 95 -8.1 2.2-16.7 3.4-25.5 3.4 -6.2 0-12.3-0.6-18.2-1.8 12.3 38.5 48.1 66.5 90.5 67.3 -33.1 26-74.9 41.5-120.3 41.5 -7.8 0-15.5-0.5-23.1-1.4C62.8 432 113.7 448 168.3 448 346.6 448 444 300.3 444 172.2c0-4.2-0.1-8.4-0.3-12.5C462.6 146 479 129 492 109.5z"/></svg>
+            </a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://dongqui.github.io//posts/cors" title="Share on Facebook" rel="noreferrer noopener" target="_blank">
+              <svg viewBox="0 0 512 512"><path d="M288 192v-38.1c0-17.2 3.8-25.9 30.5-25.9H352V64h-55.9c-68.5 0-91.1 31.4-91.1 85.3V192h-45v64h45v192h83V256h56.4l7.6-64H288z"/></svg>
+            </a>
+          </div>
+
+          
+        </article>
         <footer class="footer scrollappear">
   <p>
     Chalk is a high quality, completely customizable, performant and 100% free

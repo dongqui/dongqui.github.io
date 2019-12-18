@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Dongjin | copl.it(1) : Docker & AWS EBS</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="copl.it(1) : Docker &amp; AWS EBS">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dongqui.github.io//posts/copl-it-1">
+  <meta property="og:description" content="">
+  <meta property="og:site_name" content="Dongjin">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="https://dongqui.github.io//posts/copl-it-1">
+  <meta name="twitter:title" content="copl.it(1) : Docker &amp; AWS EBS">
+  <meta name="twitter:description" content="">
+
+  
+    <meta property="og:image" content="https://dongqui.github.io//assets/og-image-ee46bbc61b334e821e81534b1fd43f3fee6f020ec174b3c2114445695fd48c01.jpg">
+    <meta name="twitter:image" content="https://dongqui.github.io//assets/og-image-ee46bbc61b334e821e81534b1fd43f3fee6f020ec174b3c2114445695fd48c01.jpg">
+  
+
+  <link href="https://dongqui.github.io//feed.xml" type="application/rss+xml" rel="alternate" title="Dongjin Last 10 blog posts" />
+
+  
+
+  
+
+    
+      <link rel="icon" type="image/x-icon" href="/assets/favicon-light-a98c41efc5ed9fcc06ac664c9e2f7a9b3c3b2e0a52357d221fe382f6f4abc8fc.ico">
+      <link rel="apple-touch-icon" href="/assets/apple-touch-icon-light-87d1f2a3a19b1500e5c1626a0492025ca5f7f97d24540dc5900288e92112925a.png">
+      <link rel="stylesheet" type="text/css" href="/assets/light-a631b2fcd473a19df5d5d033c7c6b2b99affd9fa40c319567fe050b6bc5b6682.css">
+    
+
+  
+
+</head>
+
+<body>
+  <main>
+    <div class="grid grid-centered">
+      <div class="grid-cell">
+        <nav class="header-nav scrollappear">
+  <a href="/" class="header-logo" title="Dongjin">Dongjin</a>
+  <ul class="header-links">
+    
+    
+    
+      <li>
+        <a href="https://www.facebook.com/dongjin.kim.184007" rel="noreferrer noopener" target="_blank" title="Facebook">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-facebook">
+  <use href="/assets/facebook-72c99b26d37bee65607720abb23d26b44ef30cca1187f98b0d9305be1230b1bf.svg#icon-facebook" xlink:href="/assets/facebook-72c99b26d37bee65607720abb23d26b44ef30cca1187f98b0d9305be1230b1bf.svg#icon-facebook"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+    
+      <li>
+        <a href="https://github.com/dongqui" rel="noreferrer noopener" target="_blank" title="GitHub">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-github">
+  <use href="/assets/github-094f81040819f34343ee6ffff0980f17e2807b08b595eaaf66ae3554934fd78d.svg#icon-github" xlink:href="/assets/github-094f81040819f34343ee6ffff0980f17e2807b08b595eaaf66ae3554934fd78d.svg#icon-github"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      <li>
+        <a href="https://instagram.com/dongqui_/# Add your Instagram handle" rel="noreferrer noopener" target="_blank" title="Instagram">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-instagram">
+  <use href="/assets/instagram-37f85bc75b43ecc4c114d9a46f846327fe13c5893787c6afbcfef9d30d58bd9e.svg#icon-instagram" xlink:href="/assets/instagram-37f85bc75b43ecc4c114d9a46f846327fe13c5893787c6afbcfef9d30d58bd9e.svg#icon-instagram"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      <li>
+        <a href="mailto:dongqui9@gmail.com# Add your Email address" title="Email">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-email">
+  <use href="/assets/email-782473193bf750036fdb90e8daa075508a20509d01854c09f3237c144a3f0601.svg#icon-email" xlink:href="/assets/email-782473193bf750036fdb90e8daa075508a20509d01854c09f3237c144a3f0601.svg#icon-email"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+      <li>
+        <a href="/feed.xml" rel="noreferrer noopener" target="_blank" title="RSS">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-rss">
+  <use href="/assets/rss-541ec5cea9cefd10d2fcfec01888f3f231a8829940249835fa7b7b3a12ae0d0d.svg#icon-rss" xlink:href="/assets/rss-541ec5cea9cefd10d2fcfec01888f3f231a8829940249835fa7b7b3a12ae0d0d.svg#icon-rss"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+  </ul>
+</nav>
+
+
+  <ul class="header-tags scrollappear">
+    
+    
+      
+        <li><a href="/tag/Node">Node</a></li>
+    
+      
+        <li><a href="/tag/aws">Aws</a></li>
+    
+      
+        <li><a href="/tag/css">Css</a></li>
+    
+      
+        <li><a href="/tag/docker">Docker</a></li>
+    
+      
+        <li><a href="/tag/git">Git</a></li>
+    
+      
+        <li><a href="/tag/javascript">Javascript</a></li>
+    
+      
+        <li><a href="/tag/os">Os</a></li>
+    
+      
+        <li><a href="/tag/project">Project</a></li>
+    
+      
+        <li><a href="/tag/python">Python</a></li>
+    
+      
+        <li><a href="/tag/web">Web</a></li>
+    
+      
+        <li>...</li>
+        <li><a href="/tags">Show all</a></li>
+        
+  </ul>
+
+
+        <article class="article scrollappear">
+          <header class="article-header">
+            <h1>copl.it(1) : Docker & AWS EBS</h1>
+            <p></p>
+            <div class="article-list-footer">
+  <span class="article-list-date">
+    December 1, 2018
+  </span>
+  <span class="article-list-divider">-</span>
+  <span class="article-list-minutes">
+    
+    
+      2 minute read
+    
+  </span>
+  <span class="article-list-divider">-</span>
+  <div class="article-list-tags">
+    
+      
+      <a href="/tag/project" title="See all posts with tag 'Project'">Project</a>
+    
+      
+      <a href="/tag/docker" title="See all posts with tag 'docker'">docker</a>
+    
+      
+      <a href="/tag/aws" title="See all posts with tag 'aws'">aws</a>
+    
+  </div>
+</div>
+          </header>
+
+          <div class="article-content">
+            <p>coplit은 코드스테이츠 수강생들이 보낸 코드를 자동으로 테스트하고 그 결과를 반환하는 서비스다.</p>
+
+<ol>
+  <li>수강생이 코드를 보내오면 테스트환경을 갖춘 도커 컨테이너가 생성되고, 테스트에 필요한 파일들을 AWS EBS에서 복사해온다.</li>
+  <li>도커 컨테이너 내에서 테스트케이스를 돌린 후에 결과를 받아 유저에게 내려준다.
+<a href="/assets/postimages/docker0-3e9e558b916a048db74d41ff9bf8c8a41b11fffad68e49e6c117e36eaefa519e.jpg">
+  <img src="/assets/postimages/docker0-3e9e558b916a048db74d41ff9bf8c8a41b11fffad68e49e6c117e36eaefa519e.jpg" alt="" class="zooming" data-rjs="/assets/postimages/docker0-3e9e558b916a048db74d41ff9bf8c8a41b11fffad68e49e6c117e36eaefa519e.jpg" data-zooming-width="1024" data-zooming-height="768" />
+</a></li>
+</ol>
+
+<h2 id="왜-도커야">왜 도커야?</h2>
+<p><code class="highlighter-rouge">수강생이 서버로 보내는 코드가 우리 시스템이나, 다른 수강생의 테스트환경에 영향을 주지 않아야 한다!</code><br />
+어떤 독립된 환경을 생각하면 예전부터 사용된 VM을 쉽게 떠올릴 수 있다! 하지만 VM의 경우, 호스트OS위에 가상의 하드웨어를 생성하고 그 위에 다시 GUEST OS를 올리는 것 부터 시작한다. 매번 하나의 완전한 가상 OS를 부팅해야하기 때문에 무겁고 느릴 수 밖에 없다.
+<a href="/assets/postimages/docker1-32736b4b7b40a6c08b0d8efdf4409c42f3f0fbf9bdb5c5bad239f54c5ec5b7ba.png">
+  <img src="/assets/postimages/docker1-32736b4b7b40a6c08b0d8efdf4409c42f3f0fbf9bdb5c5bad239f54c5ec5b7ba.png" alt="" class="zooming" data-rjs="/assets/postimages/docker1-32736b4b7b40a6c08b0d8efdf4409c42f3f0fbf9bdb5c5bad239f54c5ec5b7ba.png" data-zooming-width="1326" data-zooming-height="611" />
+</a></p>
+
+<p>도커는 호스트OS위에서 프로세스로서 격리되는 방식으로 굉장히 가볍고 빠르게 실행된다.<br />
+아래와 같이 리눅스에서 제공하는 여러가지 기능들을 통해 하나의 컨테이너처럼 독립된 환경을 제공하게 된다.</p>
+<ol>
+  <li>Namepaces
+    <ul>
+      <li>NET: 컨테이너가 네트워크 스택에 대해 볼 수 있는 것들</li>
+      <li>PID: 컨테이너가 고류 할 수 있는 프로세스</li>
+      <li>MNT: 컨테이너가 볼 수 있는 파일 시스템 계층</li>
+      <li>…</li>
+    </ul>
+  </li>
+  <li>cgroup
+    <ul>
+      <li>프로세스들이 어떻게 자원(CPU, 메모리, 디스크 입출력, 네트워크 등)을 사용할 것인지 정하는 리눅스 커널 기능</li>
+    </ul>
+  </li>
+</ol>
+
+<p>게다가 단순히 도커이미지를 실행하는 것만으로 컨테이너를 생성 할 수 있어, 그 사용이 굉장히 단순하고 쉽다.<br />
+도커이미지는 컨테이너를 실행하기 위한 모든 정보를 가지고 있는 실행파일(?)로 생각 할 수 있는데, Layer개념을 사용하는 Union file system을 사용하고 있어 관리 효율도 굉장히 좋다.<br />
+Union file system은 계층 형태로 차곡차곡 쌓아 보관하는 것을 상상하면 조금 이해하기 쉽다. <br />우리 프로젝트를 예를 들어서 순수한 자바 스크립트 과제 테스트만을 위한 이미지를 만든다고 하면, node + mocha 이미지를 만들 수 있을 것이다. 여기에서 react를 사용하는 과제를 테스트하는 이미지를 만들고 싶다면, 다시 node + mocha를 생성하는 것이 아니라 node + mocha + react 형태로 본래 존재하는 이미지위에 쌓여지게 된다. react와 관련된 최소한의 용량만 추가하면 되는 것이다. <br />
+이렇게 만들어지는 image layer는 읽기 전용파일로 정해지며, 컨테이너가 실행되는 중에 생성 되거나 변경된 파일은 제일 위에 읽기/쓰기 영역에 쓰여지므로 여러 개의 컨테이너가 생성되도 최소한의 용량만 사용하게 된다.</p>
+
+<h2 id="aws-ebs">AWS EBS?</h2>
+<p><a href="/assets/postimages/docker2-e0519d3cf282d80fc85bf1e0d5ad1d97796afc9444f1e5877aaf0efb1895ff68.png">
+  <img src="/assets/postimages/docker2-e0519d3cf282d80fc85bf1e0d5ad1d97796afc9444f1e5877aaf0efb1895ff68.png" alt="" class="zooming" data-rjs="/assets/postimages/docker2-e0519d3cf282d80fc85bf1e0d5ad1d97796afc9444f1e5877aaf0efb1895ff68.png" data-zooming-width="1087" data-zooming-height="743" />
+</a></p>
+
+<p>EBS는 아마존에서 제공하는 저장서비스 중 하나로 EC2에서 로컬 저장소 ‘처럼’ 사용 할 수 있다. 그만큼 속도가 굉장히 빠르다.<br />
+무엇보다 우리 프로젝트와 잘 맞는다! 도커 컨테이너가 지니는 Union File System과는 별도로, 호스트와 공유하는 일반 파일/디렉토리로 volume 영역을 설정할 수 있다. 나는 EC2에 마운트 된 EBS를 도커 컨테이너의 volume영역으로 설정하고, EBS에 테스트케이스 파일과 유저가 보낸 코드 파일을 둬서 컨테이너가 복사해갈 수 있도록 구현하였다.<br />
+단점이라면, 여러 곳에서 접근 할 수 있는 S3와는 달리 하나의 EC2에만 붙을 수 있어 스케일링시에 번거로울 수 있다.</p>
+
+<h2 id="resource">Resource</h2>
+<p><a href="https://subicura.com/2017/01/19/docker-guide-for-beginners-1.html">https://subicura.com/2017/01/19/docker-guide-for-beginners-1.html</a>
+<a href="https://medium.freecodecamp.org/a-beginner-friendly-introduction-to-containers-vms-and-docker-79a9e3e119b">https://medium.freecodecamp.org/a-beginner-friendly-introduction-to-containers-vms-and-docker-79a9e3e119b</a><br />
+<a href="https://aws.amazon.com/ko/ebs/">https://aws.amazon.com/ko/ebs/</a></p>
+
+
+          </div>
+          <div class="article-share">
+            
+            
+            <a href="https://twitter.com/home?status=copl.it(1)+:+Docker+&+AWS+EBS%20-%20https://dongqui.github.io//posts/copl-it-1" title="Share on Twitter" rel="noreferrer noopener" target="_blank">
+              <svg viewBox="0 0 512 512"><path d="M492 109.5c-17.4 7.7-36 12.9-55.6 15.3 20-12 35.4-31 42.6-53.6 -18.7 11.1-39.4 19.2-61.5 23.5C399.8 75.8 374.6 64 346.8 64c-53.5 0-96.8 43.4-96.8 96.9 0 7.6 0.8 15 2.5 22.1 -80.5-4-151.9-42.6-199.6-101.3 -8.3 14.3-13.1 31-13.1 48.7 0 33.6 17.2 63.3 43.2 80.7C67 210.7 52 206.3 39 199c0 0.4 0 0.8 0 1.2 0 47 33.4 86.1 77.7 95 -8.1 2.2-16.7 3.4-25.5 3.4 -6.2 0-12.3-0.6-18.2-1.8 12.3 38.5 48.1 66.5 90.5 67.3 -33.1 26-74.9 41.5-120.3 41.5 -7.8 0-15.5-0.5-23.1-1.4C62.8 432 113.7 448 168.3 448 346.6 448 444 300.3 444 172.2c0-4.2-0.1-8.4-0.3-12.5C462.6 146 479 129 492 109.5z"/></svg>
+            </a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://dongqui.github.io//posts/copl-it-1" title="Share on Facebook" rel="noreferrer noopener" target="_blank">
+              <svg viewBox="0 0 512 512"><path d="M288 192v-38.1c0-17.2 3.8-25.9 30.5-25.9H352V64h-55.9c-68.5 0-91.1 31.4-91.1 85.3V192h-45v64h45v192h83V256h56.4l7.6-64H288z"/></svg>
+            </a>
+          </div>
+
+          
+        </article>
+        <footer class="footer scrollappear">
+  <p>
+    Chalk is a high quality, completely customizable, performant and 100% free
+    blog template for Jekyll built by
+    <a href="/about" title="About me">Nielsen Ramon</a>. Download it <a href="https://github.com/nielsenramon/chalk" rel="noreferrer noopener" target="_blank" title="Download Chalk">here</a>.
+  </p>
+</footer>
+
+      </div>
+    </div>
+  </main>
+  
+
+<script src="/assets/vendor-2c224c53eb697c739f9490c38819a72184f09472739fd9e492272ef174090428.js" type="text/javascript"></script>
+
+
+  <script src="/assets/webfonts-96493456d319d1bf419afdf8701552d4d486fee6afd304897d4fd81eb4e0cc0b.js" type="text/javascript"></script>
+
+
+
+  <script src="/assets/scrollappear-e2da8ea567e418637e31266cc5302126eaa79f62a2273739086358b589a89ee6.js" type="text/javascript"></script>
+
+
+<script src="/assets/application-cfde13ac81ddaf4351b2e739603e2baf688d0fcc9aba613fe62bbb1c7b037fb9.js" type="text/javascript"></script>
+
+
+</body>
+</html>

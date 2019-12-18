@@ -1,20 +1,90 @@
----
----
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="https://www.w3.org/2005/Atom" xmlns:dc="https://purl.org/dc/elements/1.1/">
   <channel>
-    <title>{{ site.name | xml_escape }}</title>
-    <description>{% if site.description %}{{ site.description | xml_escape }}{% endif %}</description>
-    <link>{{ site.url }}</link>
-    <atom:link href="{{ page.path | absolute_url }}" rel="self" type="application/rss+xml" />
-    {% for post in site.posts limit:10 %}
+    <title>Dongjin</title>
+    <description></description>
+    <link>https://dongqui.github.io/</link>
+    <atom:link href="https://dongqui.github.io//feed.xml" rel="self" type="application/rss+xml" />
+    
       <item>
-        <title>{{ post.title | xml_escape }}</title>
-        <description>{{ post.description | xml_escape }}</description>
-        <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
-        <link>{{ post.url | absolute_url }}</link>
-        <guid isPermaLink="true">{{ post.url | absolute_url }}</guid>
+        <title>RESTful API Designing guidelines — The best practices(번역)</title>
+        <description></description>
+        <pubDate>Sat, 19 Oct 2019 00:00:00 +0900</pubDate>
+        <link>https://dongqui.github.io//posts/resfulapi-best-practice</link>
+        <guid isPermaLink="true">https://dongqui.github.io//posts/resfulapi-best-practice</guid>
       </item>
-    {% endfor %}
+    
+      <item>
+        <title>GIL</title>
+        <description></description>
+        <pubDate>Sat, 20 Jul 2019 00:00:00 +0900</pubDate>
+        <link>https://dongqui.github.io//posts/gil</link>
+        <guid isPermaLink="true">https://dongqui.github.io//posts/gil</guid>
+      </item>
+    
+      <item>
+        <title>AWS lambda tip: cold start</title>
+        <description></description>
+        <pubDate>Tue, 07 May 2019 00:00:00 +0900</pubDate>
+        <link>https://dongqui.github.io//posts/labmda-tip</link>
+        <guid isPermaLink="true">https://dongqui.github.io//posts/labmda-tip</guid>
+      </item>
+    
+      <item>
+        <title>트릭 - CSS애니메이션 재실행</title>
+        <description></description>
+        <pubDate>Sun, 17 Mar 2019 00:00:00 +0900</pubDate>
+        <link>https://dongqui.github.io//posts/rerunani</link>
+        <guid isPermaLink="true">https://dongqui.github.io//posts/rerunani</guid>
+      </item>
+    
+      <item>
+        <title>Http connection management</title>
+        <description></description>
+        <pubDate>Mon, 11 Feb 2019 00:00:00 +0900</pubDate>
+        <link>https://dongqui.github.io//posts/httpconnectionmanagement</link>
+        <guid isPermaLink="true">https://dongqui.github.io//posts/httpconnectionmanagement</guid>
+      </item>
+    
+      <item>
+        <title>Network flow overview</title>
+        <description></description>
+        <pubDate>Thu, 10 Jan 2019 00:00:00 +0900</pubDate>
+        <link>https://dongqui.github.io//posts/networkoverview</link>
+        <guid isPermaLink="true">https://dongqui.github.io//posts/networkoverview</guid>
+      </item>
+    
+      <item>
+        <title>copl.it(2) : 어떻게 망했나</title>
+        <description></description>
+        <pubDate>Thu, 13 Dec 2018 00:00:00 +0900</pubDate>
+        <link>https://dongqui.github.io//posts/copl-it-2</link>
+        <guid isPermaLink="true">https://dongqui.github.io//posts/copl-it-2</guid>
+      </item>
+    
+      <item>
+        <title>copl.it(1) : Docker &amp; AWS EBS</title>
+        <description></description>
+        <pubDate>Sat, 01 Dec 2018 00:00:00 +0900</pubDate>
+        <link>https://dongqui.github.io//posts/copl-it-1</link>
+        <guid isPermaLink="true">https://dongqui.github.io//posts/copl-it-1</guid>
+      </item>
+    
+      <item>
+        <title>Git hooks</title>
+        <description></description>
+        <pubDate>Sun, 25 Nov 2018 00:00:00 +0900</pubDate>
+        <link>https://dongqui.github.io//posts/githooks</link>
+        <guid isPermaLink="true">https://dongqui.github.io//posts/githooks</guid>
+      </item>
+    
+      <item>
+        <title>Scaling server with Socket.Io (3 / 3)</title>
+        <description></description>
+        <pubDate>Sat, 15 Sep 2018 00:00:00 +0900</pubDate>
+        <link>https://dongqui.github.io//posts/scalingwithsocket3k</link>
+        <guid isPermaLink="true">https://dongqui.github.io//posts/scalingwithsocket3k</guid>
+      </item>
+    
   </channel>
 </rss>
