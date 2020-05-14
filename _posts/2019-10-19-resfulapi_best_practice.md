@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "RESTful API Designing guidelines — The best practices(번역)"
+title: "RESTful API Designing guidelines — The best practices"
 tags: [guide]
 ---
+이 글은 [RESTful API Designing guidelines — The best practices](https://hackernoon.com/restful-api-designing-guidelines-the-best-practices-60e1d954e7c9)를 번역한 글 입니다.
 
-### 이 글은 [RESTful API Designing guidelines — The best practices](https://hackernoon.com/restful-api-designing-guidelines-the-best-practices-60e1d954e7c9)를 번역한 글 입니다.
 
 <br>
 <br>
