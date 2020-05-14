@@ -6,9 +6,6 @@ tags: [guide]
 이 글은 [RESTful API Designing guidelines — The best practices](https://hackernoon.com/restful-api-designing-guidelines-the-best-practices-60e1d954e7c9)를 번역한 글 입니다.
 
 
-<br>
-<br>
-
 Facebook, Google, Github, Netflix 등 거대 아이티 기업에서는 API를 통해 개발자들에게 데이터를 제공하고 하나의 플랫폼으로서 역할을 해왔다.
 다른 개발자들을 위해 API를 제공하지 않더라도, API를 아름답게 잘 설계하는 건 자신의 어플리케이션을 위해서도 언제나 옳다!
 
