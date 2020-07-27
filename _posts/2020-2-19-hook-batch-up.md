@@ -4,7 +4,7 @@ title: "Hooks useState - batch up문제"
 tags: [react]
 ---
 하나의 object로 묶어 setState하는 class 컴포넌트와는 달리, 간단하게 state를 한 개씩 다루는 useState에서 발생하는 batch up 문제 발견..!<br>
-영 찝찝한 모양세라 콘솔에 찍어보니 역시나 불필요한 render가 발생하고 있는 것을 확인했다.
+영 찝찝한 모양새라 콘솔에 찍어보니 역시나 불필요한 render가 발생하고 있는 것을 확인했다.
 
 {% highlight javascript %}
 
