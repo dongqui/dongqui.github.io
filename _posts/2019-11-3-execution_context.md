@@ -18,8 +18,7 @@ tags: [javascript]
         
         - <strong>This binding</strong>: this 값 결정
 2. VariableEnvironment 컴포넌트 생성
-    - Lexical Environment와 거의 비슷하다. 다만 Lexical에서는 함수 선언과 변수 let,const의 바인딩을 저장하고 Varialbe에서는 변수 var만 저장한다.
-    - 
+    - Lexical Environment와 거의 비슷하다. 다만 Lexical에서는 함수 선언과 변수 let,const의 바인딩을 저장하고 Varialbe에서는 변수 var만 저장한다. 
 
 <br><br><br>
 ## Execution Phase
