@@ -23,12 +23,21 @@ tags: [web]
     - 같은 URL을 다수의 탭/창에서 열면 각각의 탭/창에 대해 새로운 sessionStorage를 생성
     - 탭/창을 닫으면 세션이 끝나고 sessionStorage 안의 객체를 초기화
     - 저장한 자료는 페이지 프로토콜에 따라 구분 됨 (같은 도메인이어도 http와 https가 서로 다른 sessionStorage를 가짐)
+    
+## IndexedDB
+- 영속적이고 대용량 데이터를 저장할 수 있다.
+- Index를 사용하여 빠르게 데이터에 접근 가능하다.
+- 모든 처리는 Transaction내에서 처리된다. 때문에 여러개의 탭을 열어 사용해도 데이터 무결성을 보장해준다.
+- same-origin-policy를 따른다.
+- key와 value로 구성되며 value는 복잡한 형태의 객체가 될 수 있다. 
+
+## webSQL
+- 대용량을 위한 SQLite 기반의 관계형 DB
+- W3C에서 deprecated 시켰다. 이유는 WebSQL 자체가 SQLite와 굉장히 타이트하게 묵여있는 구조라, W3C입장에서 굉장히 중요하게 여기는 'Standard'를 세우기가 어려웠다고 한다.
+
+## Cookies
 
 ## Resource
 [https://developer.mozilla.org/ko/docs/Web/API/Window/localStorage](https://developer.mozilla.org/ko/docs/Web/API/Window/localStorage)<br>
-
-
-Origin
-웹 콘텐츠의 출처(origin)는 접근할 때 사용하는 URL의 스킴(프로토콜, 호스트(도메인), 포트로 정의됩니다. 두 객체의 스킴, 호스트, 포트가 모두 일치하는 경우 같은 출처를 가졌다고 말합니다.
-
-일부 작업은 동일 출처 콘텐츠로 제한되나, CORS를 통해 제한을 해제할 수 있습니다.
+[https://developer.mozilla.org/ko/docs/Web/API/Window/sessionStorage](https://developer.mozilla.org/ko/docs/Web/API/Window/sessionStorage)<br>
+[https://developer.mozilla.org/ko/docs/Web/API/IndexedDB_API/Basic_Concepts_Behind_IndexedDB](https://developer.mozill.org/ko/docs/Web/API/IndexedDB_API/Basic_Concepts_Behind_IndexedDB))<br>
