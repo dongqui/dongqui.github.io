@@ -7,10 +7,6 @@ tags: [web]
 
 {% include image.html path="postimages/browser_storage" path-detail="postimages/browser_storage" alt="" %}
 
-## 용어 정리
-- Origin
-- Page Session
-
 ## Local Storage
 - 5MB-10MB 저장 가능
 - Same-origin-policy
