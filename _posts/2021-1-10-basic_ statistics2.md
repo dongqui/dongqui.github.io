@@ -3,7 +3,7 @@ layout: post
 title: "Basic Statistics(2)"
 tags: [data]
 ---
-큰 수의 법칙, 중심극한정리, 신뢰도
+큰 수의 법칙, 중심극한정리, 신뢰도, 베이지안 정리
 
 <br>
 <hr>
@@ -42,5 +42,17 @@ Sample 데이터의 수가 많아질 수록, sample의 평균은 정규분포에
 <hr>
 <br>
 
+## 베이지안 이론 (Bayesian Theroy)
+흔히 알려진 통계는 빈도주의적 통계라고 불린다. 가령 주사위를 굴려 1이 나올 확률은 1/6이다! 라고 명확하게 정의하고 그 뒤에 계산을 통해 파생되는 결과물들을 검증하여 수용하는 과정을 거친다.
+
+반면에 베이지안은 불확실성을 내포하는 경험적이이고 주관적인 사전확률을 기반으로하며, 추가되는 정보를 통해 계속해서 사전확률을 갱신해간다. 즉, 새로운 정보를 통해 어떤 사건이 발생했다는 주장의 신뢰도를 갱신해간다.
+
+{% include image.html path="postimages/bayesian.png" path-detail="postimages/bayesian.png" alt="" %}
+
+<br>
+<hr>
+<br>
+
 ## Resource
 [https://ko.khanacademy.org/math/statistics-probability/random-variables-stats-library/expected-value-lib/v/law-of-large-numbers](https://ko.khanacademy.org/math/statistics-probability/random-variables-stats-library/expected-value-lib/v/law-of-large-numbers)
+[https://www.youtube.com/watch?v=Y4ecU7NkiEI](https://www.youtube.com/watch?v=Y4ecU7NkiEI)
