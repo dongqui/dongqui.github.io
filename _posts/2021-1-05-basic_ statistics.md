@@ -3,7 +3,7 @@ layout: post
 title: "Basic Statistics(1)"
 tags: [data]
 ---
-T-test, Chi square test
+T-test, ANOVA,  Chi square test
 
 
 ### P-value
@@ -42,11 +42,6 @@ A 대학의 남학생 중 1000명의 평균 키가 180cm, B 대학의 남학생 
     (사전 정의: 주어진 조건하에서 통계적 제한을 받지 않고 자유롭게 변화될 수 있는 요소의 수)
 - t-value가 나왔다면, t-table(cf: 표준정규분포표)을 보고 P-value를 구하면 된다.
 
-### t-test 조건
-- 독립성: 두 그룹이 연결되어있는 (paired) 쌍인지
-- 등분산성 : 두 그룹이 어느정도 유사한 수준의 분산 값을 가지는지
-- 정규성: 데이터가 정규성을 나타는지
-
 ### Chi square test
 {% include image.html path="postimages/chi_1.png" path-detail="postimages/chi_1.png" alt="" %}
 - 종속변수, 독립 변수 모두 명목 척도일때 (categorical variable)
@@ -55,7 +50,33 @@ A 대학의 남학생 중 1000명의 평균 키가 180cm, B 대학의 남학생 
 - 변수가 두 개인 경우: 변수 사이의 연관성이 있는지 없는지
 - 역시나 카이제곱 테이블, 분포가 존재함
 
+### ANOVA (ANalysis Of VAriance)
+- 세 개 이상 다수의 집단을 비교하고자 할 때 사용하는 검정
+
+### One-way ANOVA에 사용되는 변수
+- 종속변수: 연속형(Continuous) 변수만 가능
+- 독릭변수: 이산형, 변주형(Discrete, Categorical) 변수만 가능, 독립변수는 한 개이고 그 안에 여러개의 레벨이 있는 형태
+    - ex) 신약 개발: 새로 개발된 약, 기존 약, 플라시보 약 
+
+### F-value를 통해 F-분포 확인
+- F-value는 두개의 분산의 비율 -> 두 개의 평균이 필요하다.
+- 첫번째 분산은 전체 평균으로부터 각 그룹의 평균 분산: Between Variance
+    - 만약에 Between variance가 충분히 크다면, 적어도 어떤 그룹 한 개는 다른 그룹과 떨어져 있을 수 있다.
+    - 여기서 Between variance가 얼마나 커야 유의한 것일까 -> 비교할만한 다른 분산이 필요!
+- 그래서 필요한 두번째 분산: 그룹내의 분산: Within Variance
+    - t-test의 t-value 계산시의 분모의 표준편차와 같은 의미 -> <br>
+    random한 (즉, 무의미한) 변화의 정도 -> <br>
+    Between variance가 Within Variance 보다 충분히 커야, 적어도 한 그룹이 전체 평균과는 다르다고 할 수 있다.
+{% include image.html path="postimages/f-value.jpeg" path-detail="postimages/f-value.jpeg" alt="" %}
+        
+### t-test, ANOVA 조건
+- 독립성: 두 그룹이 연결되어있는 (paired) 쌍인지
+- 등분산성 : 두 그룹이 어느정도 유사한 수준의 분산 값을 가지는지
+- 정규성: 데이터가 정규성을 나타는지
+
 ### Resource
 [https://www.youtube.com/channel/UCnN2E8RCEuKi-WLBrd0Nu1A](https://www.youtube.com/channel/UCnN2E8RCEuKi-WLBrd0Nu1A)
 [https://doooob.tistory.com/101](https://doooob.tistory.com/101)<br>
 [https://www.youtube.com/watch?v=HKDqlYSLt68](https://www.youtube.com/watch?v=HKDqlYSLt68)
+[https://bioinformaticsandme.tistory.com/198](https://bioinformaticsandme.tistory.com/198)<br>
+[https://www.youtube.com/watch?v=MnZ3f0YjC3M](https://www.youtube.com/watch?v=MnZ3f0YjC3M)
