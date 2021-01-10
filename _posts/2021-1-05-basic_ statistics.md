@@ -5,12 +5,19 @@ tags: [data]
 ---
 T-test, ANOVA,  Chi square test
 
+<br>
+<hr>
+<br>
 
-### P-value
+## P-value
 - P 값은 특정 값이 정규 분포(확률 분포)의 어딘가에 해당하는지 나타내는 확률이다.
 - 임계치(보통 0.05%)를 설정하고 확률적으로 우연인 것인지, 유의한 것인지 판단한다. 
 
-### T-test
+<br>
+<hr>
+<br>
+
+## T-test
 - 모집단의 표준편차가 알려지지 않았을 때, 정규분포의 모집단에서 모은 샘플(표본)의 평균값에 대한 가설검정 방법
 - 평균값의 차이와 표준편차의 비율이 얼마나 큰지 혹은 작은지를 보고서 결정하는 통계적 과정
 - 단순하게 이야기하면, 두 개의 집단이 같은지 다른지 비교하기 위해 사용한다고도 할 수 있다.
@@ -42,15 +49,11 @@ A 대학의 남학생 중 1000명의 평균 키가 180cm, B 대학의 남학생 
     (사전 정의: 주어진 조건하에서 통계적 제한을 받지 않고 자유롭게 변화될 수 있는 요소의 수)
 - t-value가 나왔다면, t-table(cf: 표준정규분포표)을 보고 P-value를 구하면 된다.
 
-### Chi square test
-{% include image.html path="postimages/chi_1.png" path-detail="postimages/chi_1.png" alt="" %}
-- 종속변수, 독립 변수 모두 명목 척도일때 (categorical variable)
-- 데이터의 값은 개수여야함
-- 변수가 한 개인 경우: 변수가 특정 분포를 따르는지
-- 변수가 두 개인 경우: 변수 사이의 연관성이 있는지 없는지
-- 역시나 카이제곱 테이블, 분포가 존재함
+<br>
+<hr>
+<br>
 
-### ANOVA (ANalysis Of VAriance)
+## ANOVA (ANalysis Of VAriance)
 - 세 개 이상 다수의 집단을 비교하고자 할 때 사용하는 검정
 
 ### One-way ANOVA에 사용되는 변수
@@ -73,6 +76,22 @@ A 대학의 남학생 중 1000명의 평균 키가 180cm, B 대학의 남학생 
 - 독립성: 두 그룹이 연결되어있는 (paired) 쌍인지
 - 등분산성 : 두 그룹이 어느정도 유사한 수준의 분산 값을 가지는지
 - 정규성: 데이터가 정규성을 나타는지
+
+<br>
+<hr>
+<br>
+
+## Chi square test
+{% include image.html path="postimages/chi_1.png" path-detail="postimages/chi_1.png" alt="" %}
+- 종속변수, 독립 변수 모두 명목 척도일때 (categorical variable)
+- 데이터의 값은 개수여야함
+- 변수가 한 개인 경우: 변수가 특정 분포를 따르는지
+- 변수가 두 개인 경우: 변수 사이의 연관성이 있는지 없는지
+- 역시나 카이제곱 테이블, 분포가 존재함
+
+<br>
+<hr>
+<br>
 
 ### Resource
 [https://www.youtube.com/channel/UCnN2E8RCEuKi-WLBrd0Nu1A](https://www.youtube.com/channel/UCnN2E8RCEuKi-WLBrd0Nu1A)

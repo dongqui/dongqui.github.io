@@ -5,17 +5,27 @@ tags: [data]
 ---
 큰 수의 법칙, 중심극한정리, 신뢰도
 
-### 큰 수의 법칙 ( Law of large numbers )
+<br>
+<hr>
+<br>
+
+## 큰 수의 법칙 ( Law of large numbers )
 {% include image.html path="postimages/law_large_numbers.png" path-detail="postimages/law_large_numbers.png" alt="" %}
 sample 데이터의 수가 커질 수록, sample의 통계치는 점점 모집단의 모수와 같아진다.
+
+<br>
+<hr>
 <br>
 
-### 중심극한정리 ( Central Limit Theorem, CLT )
+## 중심극한정리 ( Central Limit Theorem, CLT )
 {% include image.html path="postimages/clt.jpg" path-detail="postimages/clt.jpg" alt="" %}
 Sample 데이터의 수가 많아질 수록, sample의 평균은 정규분포에 근사한 형태로 나타난다.
+
+<br>
+<hr>
 <br>
 
-### 신뢰도 (Confidence interval)
+## 신뢰도 (Confidence interval)
 {% include image.html path="postimages/confidence-interval.jpeg" path-detail="postimages/confidence-interval.jpeg" alt="" %}
 신뢰도가 95% 라는 의미는 표본을 100번 뽑았을때 95번은 신뢰구간 내에 모집단의 평균이 포함된다.<br>
 
@@ -28,4 +38,9 @@ Sample 데이터의 수가 많아질 수록, sample의 평균은 정규분포에
 반대로, 모집단의 평균이 표본평균으로 부터 계산된 신뢰구간 밖으로 나가는 경우 귀무가설을 기각.<br>
 귀무가설 : 모집단의 평균값은 표본 평균값일 것이다. (2 tail t-test 기준)<br>
 
-### Resource
+<br>
+<hr>
+<br>
+
+## Resource
+[https://ko.khanacademy.org/math/statistics-probability/random-variables-stats-library/expected-value-lib/v/law-of-large-numbers](https://ko.khanacademy.org/math/statistics-probability/random-variables-stats-library/expected-value-lib/v/law-of-large-numbers)
