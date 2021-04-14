@@ -1,21 +1,14 @@
 ---
 layout: post
-title: "Basic Statistics(1)"
+title: "Basic Statistics"
 tags: [data]
 ---
-T-test, ANOVA,  Chi square test
-
-<br>
-<hr>
-<br>
+T-test, ANOVA,  Chi square test, 큰 수의 법칙, 중심 극한 정리, 신뢰도, 베이지안
 
 ## P-value
 - P 값은 특정 값이 정규 분포(확률 분포)의 어딘가에 해당하는지 나타내는 확률이다.
 - 임계치(보통 0.05%)를 설정하고 확률적으로 우연인 것인지, 유의한 것인지 판단한다. 
 
-<br>
-<hr>
-<br>
 
 ## T-test
 - 모집단의 표준편차가 알려지지 않았을 때, 정규분포의 모집단에서 모은 샘플(표본)의 평균값에 대한 가설검정 방법
@@ -49,9 +42,6 @@ A 대학의 남학생 중 1000명의 평균 키가 180cm, B 대학의 남학생 
     (사전 정의: 주어진 조건하에서 통계적 제한을 받지 않고 자유롭게 변화될 수 있는 요소의 수)
 - t-value가 나왔다면, t-table(cf: 표준정규분포표)을 보고 P-value를 구하면 된다.
 
-<br>
-<hr>
-<br>
 
 ## ANOVA (ANalysis Of VAriance)
 - 세 개 이상 다수의 집단을 비교하고자 할 때 사용하는 검정
@@ -77,10 +67,6 @@ A 대학의 남학생 중 1000명의 평균 키가 180cm, B 대학의 남학생 
 - 등분산성 : 두 그룹이 어느정도 유사한 수준의 분산 값을 가지는지
 - 정규성: 데이터가 정규성을 나타는지
 
-<br>
-<hr>
-<br>
-
 ## Chi square test
 {% include image.html path="postimages/chi_1.png" path-detail="postimages/chi_1.png" alt="" %}
 - 종속변수, 독립 변수 모두 명목 척도일때 (categorical variable)
@@ -89,8 +75,36 @@ A 대학의 남학생 중 1000명의 평균 키가 180cm, B 대학의 남학생 
 - 변수가 두 개인 경우: 변수 사이의 연관성이 있는지 없는지
 - 역시나 카이제곱 테이블, 분포가 존재함
 
+## 큰 수의 법칙 ( Law of large numbers )
+{% include image.html path="postimages/law_large_numbers.png" path-detail="postimages/law_large_numbers.png" alt="" %}
+sample 데이터의 수가 커질 수록, sample의 통계치는 점점 모집단의 모수와 같아진다.
+
+## 중심극한정리 ( Central Limit Theorem, CLT )
+{% include image.html path="postimages/clt.jpg" path-detail="postimages/clt.jpg" alt="" %}
+Sample 데이터의 수가 많아질 수록, sample의 평균은 정규분포에 근사한 형태로 나타난다.
+
+
+## 신뢰도 (Confidence interval)
+{% include image.html path="postimages/confidence-interval.jpeg" path-detail="postimages/confidence-interval.jpeg" alt="" %}
+신뢰도가 95% 라는 의미는 표본을 100번 뽑았을때 95번은 신뢰구간 내에 모집단의 평균이 포함된다.<br>
+
+{% include image.html path="postimages/confi_math.svg" path-detail="postimages/confi_math.svg" alt="" %}
+위의 공식에서 볼 수 있듯이, t-value, 분산이 커지면 허용 에러가 커지고 (신뢰구간이 넓어지고), 표본의 수가 커질 수록 허용 에러가 작아진다 (신뢰 구간이 좁아진다)
 <br>
-<hr>
+### 신뢰구간과 T-test의 관계
+신뢰구간 = 시행한 가설검정이 통계적 의미를 갖는 범위<br>
+모집단의 평균이 표본평균으로 부터 계산된 신뢰구간 안에 들어가는 경우, 귀무가설을 기각 X.<br>
+반대로, 모집단의 평균이 표본평균으로 부터 계산된 신뢰구간 밖으로 나가는 경우 귀무가설을 기각.<br>
+귀무가설 : 모집단의 평균값은 표본 평균값일 것이다. (2 tail t-test 기준)<br>
+
+
+## 베이지안 이론 (Bayesian Theroy)
+흔히 알려진 통계는 빈도주의적 통계라고 불린다. 가령 주사위를 굴려 1이 나올 확률은 1/6이다! 라고 명확하게 정의하고 그 뒤에 계산을 통해 파생되는 결과물들을 검증하여 수용하는 과정을 거친다.
+
+반면에 베이지안은 불확실성을 내포하는 경험적이이고 주관적인 사전확률을 기반으로하며, 추가되는 정보를 통해 계속해서 사전확률을 갱신해간다. 즉, 새로운 정보를 통해 어떤 사건이 발생했다는 주장의 신뢰도를 갱신해간다.
+
+{% include image.html path="postimages/bayesian.png" path-detail="postimages/bayesian.png" alt="" %}
+
 <br>
 
 ### Resource
@@ -99,3 +113,5 @@ A 대학의 남학생 중 1000명의 평균 키가 180cm, B 대학의 남학생 
 [https://www.youtube.com/watch?v=HKDqlYSLt68](https://www.youtube.com/watch?v=HKDqlYSLt68)
 [https://bioinformaticsandme.tistory.com/198](https://bioinformaticsandme.tistory.com/198)<br>
 [https://www.youtube.com/watch?v=MnZ3f0YjC3M](https://www.youtube.com/watch?v=MnZ3f0YjC3M)
+[https://ko.khanacademy.org/math/statistics-probability/random-variables-stats-library/expected-value-lib/v/law-of-large-numbers](https://ko.khanacademy.org/math/statistics-probability/random-variables-stats-library/expected-value-lib/v/law-of-large-numbers)
+[https://www.youtube.com/watch?v=Y4ecU7NkiEI](https://www.youtube.com/watch?v=Y4ecU7NkiEI)
