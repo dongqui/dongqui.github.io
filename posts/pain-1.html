@@ -3,19 +3,19 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Dongjin | The high quality, completely customizable and 100% free blog template for Jekyll</title>
+  <title>Dongjin | 눈물 기록(1)</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <meta property="og:title" content="The high quality, completely customizable and 100% free blog template for Jekyll">
+  <meta property="og:title" content="눈물 기록(1)">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://dongqui.github.io//about">
+  <meta property="og:url" content="https://dongqui.github.io//posts/pain-1">
   <meta property="og:description" content="">
   <meta property="og:site_name" content="Dongjin">
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:url" content="https://dongqui.github.io//about">
-  <meta name="twitter:title" content="The high quality, completely customizable and 100% free blog template for Jekyll">
+  <meta name="twitter:url" content="https://dongqui.github.io//posts/pain-1">
+  <meta name="twitter:title" content="눈물 기록(1)">
   <meta name="twitter:description" content="">
 
   
@@ -160,19 +160,77 @@
   </ul>
 
 
-        <div class="about scrollappear">
-  <img src="/assets/about-2cdb6eff3b793c005b266304d75b24ec83fb83e5ce1133587094c80747cf55af.jpg" alt="About Nielsen Ramon header image" />
-  <h1>About me</h1>
-  <p>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-    non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-  </p>
+        <article class="article scrollappear">
+          <header class="article-header">
+            <h1>눈물 기록(1)</h1>
+            <p></p>
+            <div class="article-list-footer">
+  <span class="article-list-date">
+    July 28, 2020
+  </span>
+  <span class="article-list-divider">-</span>
+  <span class="article-list-minutes">
+    
+    
+      2 minute read
+    
+  </span>
+  <span class="article-list-divider">-</span>
+  <div class="article-list-tags">
+    
+      
+      <a href="/tag/web" title="See all posts with tag 'Web'">Web</a>
+    
+      
+      <a href="/tag/tear" title="See all posts with tag 'Tear'">Tear</a>
+    
+  </div>
 </div>
+          </header>
 
+          <div class="article-content">
+            <p>최근 나에게 고통을 줬던 코드를 기록 해본다.</p>
+
+<h2 id="무분별한-vuexfire">무분별한 vuexfire</h2>
+<p>최근 진행한 프로젝트에서 vue, vuex, firebase, 그리고 vuexfire를 더해 사용하고 있다.<br />
+실시간성이 필요한 서비스다보니 firebase에서 제공하는 realtime 기능을 사용중이고 여기에 vuexfire를 얹은 상태다. <br />
+대략적으로 기록해보면, firestore의 collection과 document에 소켓이 연결되어 있고 여기에 vuexfire를 얹어, 소켓으로 연결된 데이터와 vuex store의 state를 바인딩 시켜주는 형태다. <br />
+연결되어있는 데이터들이 변화하는 순간 해당 데이터와 바인드된 vuex store의 state가 별다른 코드 없이 자동으로 변환된다.<br /> vuexfire는 바인딩된 스테이트에 대한 mutation, action을 추상화 시켜주는 아이로 볼 수 있다.</p>
+
+<p>얼핏보면 편리해보이지만, vuexfire가 너무 추상화 되어있어서 이벤트를 따라가기가 힘들었다… <br />
+가령, 게시판을 구현했다고 가정할 때, 게시글을 생성하고 그 게시글로 이동시켜야 한다고 하자. <br />
+‘글 생성 -&gt; 글 생성 성공 -&gt; 리다이렉트’ 정도의 흐름이 될텐데, vuexFire는 글 생성 요청 이후의 흐름을 따라가기가 힘들다.</p>
+
+<p>이런 식이면, 결국 각각의 컴포넌트에서 내 손으로 직접 watch를 통해 ‘글’이라는 스테이트를 바라보게 만들고, 변화가 생겼을 때 무언가를 하도록 구현하게 된다.<br />
+watch를 남발하는 거 같아 찝찝하기도 하고, 무엇보다 이벤트 트랙킹이 안돼서 디버깅이 힘들다. <br />
+컴포넌트 내부 로직은 ‘뭐가 변했는지 모르겠는데 일단 변했으니까 나 이거 한다~’로 가득 채워지게 된다.</p>
+
+<p>vuexfire만 걷어내도 firestore onSnapshot을 통해 적어도 create, update, delete 시점은 잡아낼 수 있다. <br />
+각각의 처리에 대한 비용이 들겠지만, 무분별하게 앱의 상태를 깜깜이로 업데이트 시키는 로직을 줄이는게 미래의 비용이나 정신 건강에 좋은 거 같다.</p>
+
+<h2 id="컴포넌트와-스테이트">컴포넌트와 스테이트</h2>
+<p>컴포넌트를 프레젠테이션/컨테이너로 나누는 등의 방식은 종종 봤지만, 사실 필요성에 대해 이전 까지 깊이 체감은 못했었다.<br />
+최근에, 완전히 같은 페이지지만 권한에 따라 다른 데이터를 보여주는 작업이 있었다. <br />
+컴포넌트 자체가 큰 것도 문제였지만, 이 큰 컴포넌트가 한쪽 권한과 관련된 스테이트랑 한 몸 처럼 붙어있어서 재사용하기가 너무 힘들었다. <br />
+때어내려고 시도하는 과정도 너무 고통 스러웠고, 일정 압박에 못이겨 해당 페이지의 코드를 통째로 복사 붙여넣기해서 작업을 진행한 사실에 더 고통 받았다.</p>
+
+<h2 id="resource">Resource</h2>
+<p><strong>나의 고통</strong></p>
+
+          </div>
+          <div class="article-share">
+            
+            
+            <a href="https://twitter.com/home?status=%EB%88%88%EB%AC%BC+%EA%B8%B0%EB%A1%9D(1)%20-%20https://dongqui.github.io//posts/pain-1" title="Share on Twitter" rel="noreferrer noopener" target="_blank">
+              <svg viewBox="0 0 512 512"><path d="M492 109.5c-17.4 7.7-36 12.9-55.6 15.3 20-12 35.4-31 42.6-53.6 -18.7 11.1-39.4 19.2-61.5 23.5C399.8 75.8 374.6 64 346.8 64c-53.5 0-96.8 43.4-96.8 96.9 0 7.6 0.8 15 2.5 22.1 -80.5-4-151.9-42.6-199.6-101.3 -8.3 14.3-13.1 31-13.1 48.7 0 33.6 17.2 63.3 43.2 80.7C67 210.7 52 206.3 39 199c0 0.4 0 0.8 0 1.2 0 47 33.4 86.1 77.7 95 -8.1 2.2-16.7 3.4-25.5 3.4 -6.2 0-12.3-0.6-18.2-1.8 12.3 38.5 48.1 66.5 90.5 67.3 -33.1 26-74.9 41.5-120.3 41.5 -7.8 0-15.5-0.5-23.1-1.4C62.8 432 113.7 448 168.3 448 346.6 448 444 300.3 444 172.2c0-4.2-0.1-8.4-0.3-12.5C462.6 146 479 129 492 109.5z"/></svg>
+            </a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://dongqui.github.io//posts/pain-1" title="Share on Facebook" rel="noreferrer noopener" target="_blank">
+              <svg viewBox="0 0 512 512"><path d="M288 192v-38.1c0-17.2 3.8-25.9 30.5-25.9H352V64h-55.9c-68.5 0-91.1 31.4-91.1 85.3V192h-45v64h45v192h83V256h56.4l7.6-64H288z"/></svg>
+            </a>
+          </div>
+
+          
+        </article>
         <footer class="footer scrollappear">
   <p>
     Chalk is a high quality, completely customizable, performant and 100% free
