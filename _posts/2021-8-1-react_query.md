@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "React-query"
-tags: [reaact]
+tags: [react]
 ---
 
 ## 등장 배경
