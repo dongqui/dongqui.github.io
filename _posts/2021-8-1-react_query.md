@@ -4,6 +4,8 @@ title: "React-query"
 tags: [react]
 ---
 
+사랑해요... React-query!
+
 ## 등장 배경
 react-query는 서버 상태와 클라이언트의 상태가 분명하게 다르기 때문에, 관리하는 방법 또한 달라야 한다는 생각에서 시작한다.<br><br>
 react-query가 말하는 서버 상태란,
