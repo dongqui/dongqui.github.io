@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Dongjin | 자바스크립트 2021</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="자바스크립트 2021">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dongqui.github.io//posts/es2021">
+  <meta property="og:description" content="">
+  <meta property="og:site_name" content="Dongjin">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="https://dongqui.github.io//posts/es2021">
+  <meta name="twitter:title" content="자바스크립트 2021">
+  <meta name="twitter:description" content="">
+
+  
+    <meta property="og:image" content="https://dongqui.github.io//assets/og-image-ee46bbc61b334e821e81534b1fd43f3fee6f020ec174b3c2114445695fd48c01.jpg">
+    <meta name="twitter:image" content="https://dongqui.github.io//assets/og-image-ee46bbc61b334e821e81534b1fd43f3fee6f020ec174b3c2114445695fd48c01.jpg">
+  
+
+  <link href="https://dongqui.github.io//feed.xml" type="application/rss+xml" rel="alternate" title="Dongjin Last 10 blog posts" />
+
+  
+
+  
+
+    
+      <link rel="icon" type="image/x-icon" href="/assets/favicon-light-a98c41efc5ed9fcc06ac664c9e2f7a9b3c3b2e0a52357d221fe382f6f4abc8fc.ico">
+      <link rel="apple-touch-icon" href="/assets/apple-touch-icon-light-87d1f2a3a19b1500e5c1626a0492025ca5f7f97d24540dc5900288e92112925a.png">
+      <link rel="stylesheet" type="text/css" href="/assets/light-bb1553a18d0f1ccfe1aabc010584c49b4277a88503216b78906ba719e30019c1.css">
+    
+
+  
+
+</head>
+
+<body>
+  <main>
+    <div class="grid grid-centered">
+      <div class="grid-cell">
+        <nav class="header-nav scrollappear">
+  <a href="/" class="header-logo" title="Dongjin">Dongjin</a>
+  <ul class="header-links">
+    
+    
+    
+      <li>
+        <a href="https://www.facebook.com/dongjin.kim.184007" rel="noreferrer noopener" target="_blank" title="Facebook">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-facebook">
+  <use href="/assets/facebook-72c99b26d37bee65607720abb23d26b44ef30cca1187f98b0d9305be1230b1bf.svg#icon-facebook" xlink:href="/assets/facebook-72c99b26d37bee65607720abb23d26b44ef30cca1187f98b0d9305be1230b1bf.svg#icon-facebook"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+    
+      <li>
+        <a href="https://github.com/dongqui" rel="noreferrer noopener" target="_blank" title="GitHub">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-github">
+  <use href="/assets/github-094f81040819f34343ee6ffff0980f17e2807b08b595eaaf66ae3554934fd78d.svg#icon-github" xlink:href="/assets/github-094f81040819f34343ee6ffff0980f17e2807b08b595eaaf66ae3554934fd78d.svg#icon-github"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      <li>
+        <a href="https://instagram.com/dongqui_/# Add your Instagram handle" rel="noreferrer noopener" target="_blank" title="Instagram">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-instagram">
+  <use href="/assets/instagram-37f85bc75b43ecc4c114d9a46f846327fe13c5893787c6afbcfef9d30d58bd9e.svg#icon-instagram" xlink:href="/assets/instagram-37f85bc75b43ecc4c114d9a46f846327fe13c5893787c6afbcfef9d30d58bd9e.svg#icon-instagram"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      <li>
+        <a href="mailto:dongqui9@gmail.com# Add your Email address" title="Email">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-email">
+  <use href="/assets/email-782473193bf750036fdb90e8daa075508a20509d01854c09f3237c144a3f0601.svg#icon-email" xlink:href="/assets/email-782473193bf750036fdb90e8daa075508a20509d01854c09f3237c144a3f0601.svg#icon-email"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+      <li>
+        <a href="/feed.xml" rel="noreferrer noopener" target="_blank" title="RSS">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-rss">
+  <use href="/assets/rss-541ec5cea9cefd10d2fcfec01888f3f231a8829940249835fa7b7b3a12ae0d0d.svg#icon-rss" xlink:href="/assets/rss-541ec5cea9cefd10d2fcfec01888f3f231a8829940249835fa7b7b3a12ae0d0d.svg#icon-rss"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+  </ul>
+</nav>
+
+
+  <ul class="header-tags scrollappear">
+    
+    
+      
+        <li><a href="/tag/DL">Dl</a></li>
+    
+      
+        <li><a href="/tag/JS">Js</a></li>
+    
+      
+        <li><a href="/tag/Javascript">Javascript</a></li>
+    
+      
+        <li><a href="/tag/Node">Node</a></li>
+    
+      
+        <li><a href="/tag/Web">Web</a></li>
+    
+      
+        <li><a href="/tag/aws">Aws</a></li>
+    
+      
+        <li><a href="/tag/css">Css</a></li>
+    
+      
+        <li><a href="/tag/docker">Docker</a></li>
+    
+      
+        <li><a href="/tag/git">Git</a></li>
+    
+      
+        <li><a href="/tag/guide">Guide</a></li>
+    
+      
+        <li>...</li>
+        <li><a href="/tags">Show all</a></li>
+        
+  </ul>
+
+
+        <article class="article scrollappear">
+          <header class="article-header">
+            <h1>자바스크립트 2021</h1>
+            <p></p>
+            <div class="article-list-footer">
+  <span class="article-list-date">
+    June 2, 2021
+  </span>
+  <span class="article-list-divider">-</span>
+  <span class="article-list-minutes">
+    
+    
+      5 minute read
+    
+  </span>
+  <span class="article-list-divider">-</span>
+  <div class="article-list-tags">
+    
+      
+      <a href="/tag/JS" title="See all posts with tag ''"></a>
+    
+  </div>
+</div>
+          </header>
+
+          <div class="article-content">
+            <p>ECMAScript 2021이 밝았다.</p>
+
+<p>6월 릴리즈 예정. <a href="https://github.com/tc39/ecma262/releases/tag/es2021-candidate-2021-03">ES2021 Candidate</a></p>
+
+<h2 id="stringprototypereplaceall">String.prototype.replaceAll()</h2>
+<p>지금 존재하는 String.prototype.replace()는 첫 번째로 만나는 스트링만 대체한다.<br /> 그래서 보통 정규 표션식 /regexp/g)을 사용하는 약간의 번거로움이 있었다.</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">    
+    <span class="kd">const</span> <span class="nx">str</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">My father is father</span><span class="dl">'</span><span class="p">;</span>
+    <span class="kd">const</span> <span class="nx">newStr</span> <span class="o">=</span> <span class="nx">str</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="dl">'</span><span class="s1">father</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">mother</span><span class="dl">'</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">newStr</span><span class="p">);</span> <span class="c1">// My mother is father;</span>
+    
+    <span class="kd">const</span> <span class="nx">str2</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">My father is father</span><span class="dl">'</span><span class="p">;</span>
+    <span class="kd">const</span> <span class="nx">newStr2</span> <span class="o">=</span> <span class="nx">str</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/father/g</span><span class="p">,</span> <span class="dl">'</span><span class="s1">mother</span><span class="dl">'</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">newStr2</span><span class="p">);</span> <span class="c1">// My mother is mother;</span>
+    </code></pre></figure>
+
+<p>이제 replaceAll 메서드가 추가된다.</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">    <span class="kd">const</span> <span class="nx">str</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">My father is father</span><span class="dl">'</span><span class="p">;</span>
+    <span class="kd">const</span> <span class="nx">newStr</span> <span class="o">=</span> <span class="nx">str</span><span class="p">.</span><span class="nx">replaceAll</span><span class="p">(</span><span class="dl">'</span><span class="s1">father</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">mother</span><span class="dl">'</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">newStr</span><span class="p">);</span> <span class="c1">// My mother is mother;</span>
+    </code></pre></figure>
+
+<h2 id="숫자-구분자-numeric-separators">숫자 구분자 (Numeric Separators)</h2>
+<p>긴 숫자를 쓸 때 <strong>‘_‘</strong> 를 이용해 가독성을 높여주는 기능이 나온다.</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">    <span class="kd">const</span> <span class="nx">longNum</span> <span class="o">=</span> <span class="mi">1</span><span class="nx">_000_000_000</span><span class="p">;</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">longNum</span><span class="p">)</span><span class="c1">// 1000000000;</span>
+    <span class="kd">const</span> <span class="nx">floatNum</span> <span class="o">=</span> <span class="mi">12</span><span class="nx">_3_45</span><span class="p">.</span><span class="mi">56</span><span class="p">;</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">floatNum</span><span class="p">)</span><span class="c1">// 12345.56</span>
+    </code></pre></figure>
+
+<h2 id="논리-할당-연산자logical-assignment-operator">논리 할당 연산자(Logical Assignment Operator)</h2>
+<p>논리 연산자와 할당 표현식을 결합한 연산자가 추가 된다.<br />
+아직 익숙하지 않아서 그런지, 약간은 헷갈리는 느낌이 있다…<br />
+<strong>‘&amp;&amp;’, ‘||’</strong> 는 값을 <strong>할당 받는 변수</strong>의 falsy, truthy를 판단하고 <strong>’??’</strong> 는 undefined나 null일 경우를 판단하여 값을 할당한다.</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">    <span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="kd">let</span> <span class="nx">y</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="nx">x</span> <span class="o">&amp;&amp;=</span> <span class="nx">y</span><span class="p">;</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="c1">// 1;</span>
+    
+    <span class="c1">//위 코드를 풀어쓰면 아래와 같다.</span>
+    
+    <span class="k">if</span> <span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">x</span> <span class="o">=</span> <span class="nx">y</span><span class="p">;</span>
+    <span class="p">}</span>
+    </code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">    <span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kd">let</span> <span class="nx">y</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="nx">x</span> <span class="o">||=</span> <span class="nx">y</span><span class="p">;</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="c1">// 1;</span>
+
+    <span class="c1">//위 코드를 풀어쓰면 아래와 같다.</span>
+    
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">x</span> <span class="o">=</span> <span class="nx">y</span><span class="p">;</span>
+    <span class="p">}</span>
+    </code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">    <span class="kd">let</span> <span class="nx">x</span><span class="p">;</span>
+    <span class="kd">let</span> <span class="nx">y</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="nx">x</span> <span class="p">??</span><span class="o">=</span> <span class="nx">y</span><span class="p">;</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="c1">// 1;</span>
+
+    <span class="c1">//위 코드를 풀어쓰면 아래와 같다.</span>
+    
+    <span class="k">if</span> <span class="p">(</span><span class="nx">x</span> <span class="o">===</span> <span class="kc">undefined</span> <span class="o">||</span> <span class="nx">x</span> <span class="o">===</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">x</span> <span class="o">=</span> <span class="nx">y</span><span class="p">;</span>
+    <span class="p">}</span>
+    </code></pre></figure>
+
+<h2 id="promiseany">Promise.any</h2>
+<p>기존의 Promise.race 처럼, 프로미스 객체로 이뤄진 배열 중 먼저 이행된 프로미스 객체의 결과를 반환한다.
+Promise.race 와 다른 점은, 먼저 거절된 객체가 있어도 즉시 거절 하지 않는다.</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">    <span class="kd">const</span> <span class="nx">p1</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nx">reject</span><span class="p">(</span><span class="dl">'</span><span class="s1">A</span><span class="dl">'</span><span class="p">),</span> <span class="mi">100</span><span class="p">);</span>
+    <span class="p">});</span>
+    <span class="kd">const</span> <span class="nx">p2</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nx">resolve</span><span class="p">(</span><span class="dl">'</span><span class="s1">B</span><span class="dl">'</span><span class="p">),</span> <span class="mi">200</span><span class="p">);</span>
+    <span class="p">});</span>
+    <span class="kd">const</span> <span class="nx">p3</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nx">resolve</span><span class="p">(</span><span class="dl">'</span><span class="s1">C</span><span class="dl">'</span><span class="p">),</span> <span class="mi">300</span><span class="p">);</span>
+    <span class="p">});</span>
+    
+    <span class="p">(</span><span class="k">async</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">try</span> <span class="p">{</span>
+            <span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="k">await</span> <span class="nb">Promise</span><span class="p">.</span><span class="nx">any</span><span class="p">([</span><span class="nx">p1</span><span class="p">,</span> <span class="nx">p2</span><span class="p">,</span> <span class="nx">p3</span><span class="p">]);</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span> 
+        <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">error</span><span class="dl">'</span><span class="p">,</span> <span class="nx">e</span><span class="p">);</span>
+        <span class="p">}</span>
+        
+        <span class="c1">// 'B'</span>
+    <span class="p">})();</span>
+    
+    <span class="p">(</span><span class="k">async</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">try</span> <span class="p">{</span>
+            <span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="k">await</span> <span class="nb">Promise</span><span class="p">.</span><span class="nx">race</span><span class="p">([</span><span class="nx">p1</span><span class="p">,</span> <span class="nx">p2</span><span class="p">,</span> <span class="nx">p3</span><span class="p">]);</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>        
+        <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">error</span><span class="dl">'</span><span class="p">,</span> <span class="nx">e</span><span class="p">);</span>
+        <span class="p">}</span>
+        
+        <span class="c1">// 'error, A'</span>
+    <span class="p">})();</span>
+    </code></pre></figure>
+
+<h2 id="weakref">WeakRef</h2>
+<p>자바스트립트의 가비지 컬렉터는 참조가 걸려있으면 절대 건드리는 법이 없었다.<br /> 
+WeakRef는 ‘약함 참조’로 가비지 컬렉팅의 대상이 된다.<br />
+주의해야 할 점은, 가비지 컬렉터가 자바스트립트 엔진에 따라 작동이 상이하기 때문에, 원치 않은 결과가 발생할 수 있다.<br /> 
+실제로, 저자조차 사용을 권하지는 않는다.  <a href="https://github.com/tc39/proposal-weakrefs/blob/master/README.md">proposal-weakrefs/</a></p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">    <span class="kd">let</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">dj</span><span class="dl">'</span><span class="p">,</span>
+    <span class="p">};</span>
+    <span class="kd">const</span> <span class="nx">weakObj</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">WeakRef</span><span class="p">(</span><span class="nx">obj</span><span class="p">);</span>
+    <span class="nx">obj</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+    <span class="kd">const</span> <span class="nx">timer</span> <span class="o">=</span> <span class="nx">setInterval</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="kd">const</span> <span class="nx">weakR</span> <span class="o">=</span> <span class="nx">weakObj</span><span class="p">.</span><span class="nx">deref</span><span class="p">();</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">weakR</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">weakR</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Collected</span><span class="dl">'</span><span class="p">);</span>
+            <span class="nx">clearInterval</span><span class="p">(</span><span class="nx">timer</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">},</span> <span class="mi">1000</span><span class="p">);</span>
+    </code></pre></figure>
+
+<p><a href="/assets/postimages/weakref-584126956d7e1f15985d4e29a02c2e42da0b46ebf5e466f71575125fd70fc086.png">
+  <img src="/assets/postimages/weakref-584126956d7e1f15985d4e29a02c2e42da0b46ebf5e466f71575125fd70fc086.png" alt="" class="zooming" data-rjs="/assets/postimages/weakref-584126956d7e1f15985d4e29a02c2e42da0b46ebf5e466f71575125fd70fc086.png" data-zooming-width="" data-zooming-height="" />
+</a></p>
+
+<h2 id="finalizers">Finalizers</h2>
+<p>garbage collection 이후 콜백을 호출하도록 요청할 수 있게 됐다.
+크롬 개발자 도구 퍼포먼스 탭에서 쓰레기통 버튼을 눌러 테스트(garbage collection) 해볼 수 있다.</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">    <span class="kd">const</span> <span class="nx">registry</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">FinalizationRegistry</span><span class="p">((</span><span class="nx">value</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">value</span><span class="p">);</span>
+    <span class="p">});</span>
+    <span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+      <span class="nx">registry</span><span class="p">.</span><span class="nx">register</span><span class="p">({},</span> <span class="dl">'</span><span class="s1">hello</span><span class="dl">'</span><span class="p">);</span>
+    <span class="p">})();</span>
+    </code></pre></figure>
+
+<p><a href="/assets/postimages/gc-dca34ea19646cc304fe9e8ab2daa6d5cfa911f1c8b4a6ebf292f0ddd4176136f.png">
+  <img src="/assets/postimages/gc-dca34ea19646cc304fe9e8ab2daa6d5cfa911f1c8b4a6ebf292f0ddd4176136f.png" alt="" class="zooming" data-rjs="/assets/postimages/gc-dca34ea19646cc304fe9e8ab2daa6d5cfa911f1c8b4a6ebf292f0ddd4176136f.png" data-zooming-width="" data-zooming-height="" />
+</a></p>
+
+<h2 id="resource">Resource</h2>
+<p><a href="https://ui.toast.com/weekly-pick/ko_20210202">https://ui.toast.com/weekly-pick/ko_20210202</a><br />
+<a href="https://github.com/tc39/proposals/blob/master/finished-proposals.md">https://github.com/tc39/proposals/blob/master/finished-proposals.md</a><br />
+<a href="https://backbencher.dev/javascript/es2021-new-features">https://backbencher.dev/javascript/es2021-new-features</a></p>
+
+          </div>
+          <div class="article-share">
+            
+            
+            <a href="https://twitter.com/home?status=%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8+2021%20-%20https://dongqui.github.io//posts/es2021" title="Share on Twitter" rel="noreferrer noopener" target="_blank">
+              <svg viewBox="0 0 512 512"><path d="M492 109.5c-17.4 7.7-36 12.9-55.6 15.3 20-12 35.4-31 42.6-53.6 -18.7 11.1-39.4 19.2-61.5 23.5C399.8 75.8 374.6 64 346.8 64c-53.5 0-96.8 43.4-96.8 96.9 0 7.6 0.8 15 2.5 22.1 -80.5-4-151.9-42.6-199.6-101.3 -8.3 14.3-13.1 31-13.1 48.7 0 33.6 17.2 63.3 43.2 80.7C67 210.7 52 206.3 39 199c0 0.4 0 0.8 0 1.2 0 47 33.4 86.1 77.7 95 -8.1 2.2-16.7 3.4-25.5 3.4 -6.2 0-12.3-0.6-18.2-1.8 12.3 38.5 48.1 66.5 90.5 67.3 -33.1 26-74.9 41.5-120.3 41.5 -7.8 0-15.5-0.5-23.1-1.4C62.8 432 113.7 448 168.3 448 346.6 448 444 300.3 444 172.2c0-4.2-0.1-8.4-0.3-12.5C462.6 146 479 129 492 109.5z"/></svg>
+            </a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://dongqui.github.io//posts/es2021" title="Share on Facebook" rel="noreferrer noopener" target="_blank">
+              <svg viewBox="0 0 512 512"><path d="M288 192v-38.1c0-17.2 3.8-25.9 30.5-25.9H352V64h-55.9c-68.5 0-91.1 31.4-91.1 85.3V192h-45v64h45v192h83V256h56.4l7.6-64H288z"/></svg>
+            </a>
+          </div>
+
+          
+        </article>
+        <footer class="footer scrollappear">
+  <p>
+    Chalk is a high quality, completely customizable, performant and 100% free
+    blog template for Jekyll built by
+    <a href="/about" title="About me">Nielsen Ramon</a>. Download it <a href="https://github.com/nielsenramon/chalk" rel="noreferrer noopener" target="_blank" title="Download Chalk">here</a>.
+  </p>
+</footer>
+
+      </div>
+    </div>
+  </main>
+  
+
+<script src="/assets/vendor-ec04f549bf06a348280d37d309c000e0374d58d6dc12c88480223cba94221c70.js" type="text/javascript"></script>
+
+
+  <script src="/assets/webfonts-96493456d319d1bf419afdf8701552d4d486fee6afd304897d4fd81eb4e0cc0b.js" type="text/javascript"></script>
+
+
+
+  <script src="/assets/scrollappear-e2da8ea567e418637e31266cc5302126eaa79f62a2273739086358b589a89ee6.js" type="text/javascript"></script>
+
+
+<script src="/assets/application-cfde13ac81ddaf4351b2e739603e2baf688d0fcc9aba613fe62bbb1c7b037fb9.js" type="text/javascript"></script>
+
+
+</body>
+</html>

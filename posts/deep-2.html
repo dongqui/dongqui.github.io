@@ -3,19 +3,19 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Dongjin | The high quality, completely customizable and 100% free blog template for Jekyll</title>
+  <title>Dongjin | 가슴으로 받아들이는 딥러닝(2)</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <meta property="og:title" content="The high quality, completely customizable and 100% free blog template for Jekyll">
+  <meta property="og:title" content="가슴으로 받아들이는 딥러닝(2)">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://dongqui.github.io//about">
+  <meta property="og:url" content="https://dongqui.github.io//posts/deep-2">
   <meta property="og:description" content="">
   <meta property="og:site_name" content="Dongjin">
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:url" content="https://dongqui.github.io//about">
-  <meta name="twitter:title" content="The high quality, completely customizable and 100% free blog template for Jekyll">
+  <meta name="twitter:url" content="https://dongqui.github.io//posts/deep-2">
+  <meta name="twitter:title" content="가슴으로 받아들이는 딥러닝(2)">
   <meta name="twitter:description" content="">
 
   
@@ -160,19 +160,77 @@
   </ul>
 
 
-        <div class="about scrollappear">
-  <img src="/assets/about-2cdb6eff3b793c005b266304d75b24ec83fb83e5ce1133587094c80747cf55af.jpg" alt="About Nielsen Ramon header image" />
-  <h1>About me</h1>
-  <p>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-    non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-  </p>
+        <article class="article scrollappear">
+          <header class="article-header">
+            <h1>가슴으로 받아들이는 딥러닝(2)</h1>
+            <p></p>
+            <div class="article-list-footer">
+  <span class="article-list-date">
+    April 28, 2021
+  </span>
+  <span class="article-list-divider">-</span>
+  <span class="article-list-minutes">
+    
+    
+      1 minute read
+    
+  </span>
+  <span class="article-list-divider">-</span>
+  <div class="article-list-tags">
+    
+      
+      <a href="/tag/DL" title="See all posts with tag ''"></a>
+    
+  </div>
 </div>
+          </header>
 
+          <div class="article-content">
+            <p>머리로 이해하기 어려운 온갖 수학식과 어려운 전문 용어를 걷어내고, 그냥 그렇구나~ 하고 가슴으로 딥러닝을 받아들여보자.</p>
+
+<p>입력층으로 들어와 은닉층의 노드들의 가중치를 합산하며 여차저차 출력층 까지 도달해 결과 값을 도출했다면?<br />
+우리가 데이터에 라벨링해둔 정답과 비교해본다.<br />
+그렇게 모든 데이터의 결과값 오차를 차곡차곡 모아 그래프로 나타내보면 요렇게 표현 될 수 있다.
+<a href="/assets/postimages/deep_2_dif-cff053ecd1f857d2fcb9f1c5de39e51c3a9092e28f7a295b02019238673dfd95.png">
+  <img src="/assets/postimages/deep_2_dif-cff053ecd1f857d2fcb9f1c5de39e51c3a9092e28f7a295b02019238673dfd95.png" alt="" class="zooming" data-rjs="/assets/postimages/deep_2_dif-cff053ecd1f857d2fcb9f1c5de39e51c3a9092e28f7a295b02019238673dfd95.png" data-zooming-width="" data-zooming-height="" />
+</a></p>
+
+<p>가중치가 커지거나 작아질 때 오차가 커지다가 어느 시점에서 오차가 가장 낮은 지점이 있는 것을 볼 수 있다.<br /><br /><br />
+오차가 가장 낮은 지점으로 어떻게 찾아 갈 수 있을까?
+<a href="/assets/postimages/deep_2_gradient-ff74738cd8bb3da957ff5f2a68d0ab7e3c616183ea315b1350b5fd44041a9d43.png">
+  <img src="/assets/postimages/deep_2_gradient-ff74738cd8bb3da957ff5f2a68d0ab7e3c616183ea315b1350b5fd44041a9d43.png" alt="" class="zooming" data-rjs="/assets/postimages/deep_2_gradient-ff74738cd8bb3da957ff5f2a68d0ab7e3c616183ea315b1350b5fd44041a9d43.png" data-zooming-width="" data-zooming-height="" />
+</a></p>
+
+<p>각 지점의 기울기를 구하면 된다 (미분).<br />
+기울기가 음수인지 양수인지에 따라 오른쪽으로 이동할 것인지 왼쪽으로 이동할 것인지 정하고,
+기울기의 크기에 따라 내려갈 것인지 정한다.<br /> 
+모델의 목표는 기울기가 0인 지점!<br />
+그렇게 조금조금씩 경사를 살피며 최적의 지점으로 하강한다(경사하강법).<br />
+이 과정을 출력층 -&gt; 인풋층 방향으로 계속해서 진행한다.
+<a href="/assets/postimages/deep_2_back-04a66c8ab889658b993b3f5087c220083ab582aad303b3ec42bbe44d5c87ba2d.png">
+  <img src="/assets/postimages/deep_2_back-04a66c8ab889658b993b3f5087c220083ab582aad303b3ec42bbe44d5c87ba2d.png" alt="" class="zooming" data-rjs="/assets/postimages/deep_2_back-04a66c8ab889658b993b3f5087c220083ab582aad303b3ec42bbe44d5c87ba2d.png" data-zooming-width="" data-zooming-height="" />
+</a></p>
+
+<p>그렇게 모델을 혼내키고, 가중치를 수정하는 것을 반복하다보면, 처음에는 의미 없던 가중치들이 최적화 되어간다.
+<a href="/assets/postimages/deep_2_repeat-3e2f14330f0dc1482fa7255901d739abaf07e913ae2590b0bee4310cdde79388.png">
+  <img src="/assets/postimages/deep_2_repeat-3e2f14330f0dc1482fa7255901d739abaf07e913ae2590b0bee4310cdde79388.png" alt="" class="zooming" data-rjs="/assets/postimages/deep_2_repeat-3e2f14330f0dc1482fa7255901d739abaf07e913ae2590b0bee4310cdde79388.png" data-zooming-width="" data-zooming-height="" />
+</a></p>
+
+
+          </div>
+          <div class="article-share">
+            
+            
+            <a href="https://twitter.com/home?status=%EA%B0%80%EC%8A%B4%EC%9C%BC%EB%A1%9C+%EB%B0%9B%EC%95%84%EB%93%A4%EC%9D%B4%EB%8A%94+%EB%94%A5%EB%9F%AC%EB%8B...%20-%20https://dongqui.github.io//posts/deep-2" title="Share on Twitter" rel="noreferrer noopener" target="_blank">
+              <svg viewBox="0 0 512 512"><path d="M492 109.5c-17.4 7.7-36 12.9-55.6 15.3 20-12 35.4-31 42.6-53.6 -18.7 11.1-39.4 19.2-61.5 23.5C399.8 75.8 374.6 64 346.8 64c-53.5 0-96.8 43.4-96.8 96.9 0 7.6 0.8 15 2.5 22.1 -80.5-4-151.9-42.6-199.6-101.3 -8.3 14.3-13.1 31-13.1 48.7 0 33.6 17.2 63.3 43.2 80.7C67 210.7 52 206.3 39 199c0 0.4 0 0.8 0 1.2 0 47 33.4 86.1 77.7 95 -8.1 2.2-16.7 3.4-25.5 3.4 -6.2 0-12.3-0.6-18.2-1.8 12.3 38.5 48.1 66.5 90.5 67.3 -33.1 26-74.9 41.5-120.3 41.5 -7.8 0-15.5-0.5-23.1-1.4C62.8 432 113.7 448 168.3 448 346.6 448 444 300.3 444 172.2c0-4.2-0.1-8.4-0.3-12.5C462.6 146 479 129 492 109.5z"/></svg>
+            </a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://dongqui.github.io//posts/deep-2" title="Share on Facebook" rel="noreferrer noopener" target="_blank">
+              <svg viewBox="0 0 512 512"><path d="M288 192v-38.1c0-17.2 3.8-25.9 30.5-25.9H352V64h-55.9c-68.5 0-91.1 31.4-91.1 85.3V192h-45v64h45v192h83V256h56.4l7.6-64H288z"/></svg>
+            </a>
+          </div>
+
+          
+        </article>
         <footer class="footer scrollappear">
   <p>
     Chalk is a high quality, completely customizable, performant and 100% free

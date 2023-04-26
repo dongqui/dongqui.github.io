@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Dongjin | Recoil - New state management library by Facebook</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="Recoil - New state management library by Facebook">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dongqui.github.io//posts/recoil">
+  <meta property="og:description" content="">
+  <meta property="og:site_name" content="Dongjin">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="https://dongqui.github.io//posts/recoil">
+  <meta name="twitter:title" content="Recoil - New state management library by Facebook">
+  <meta name="twitter:description" content="">
+
+  
+    <meta property="og:image" content="https://dongqui.github.io//assets/og-image-ee46bbc61b334e821e81534b1fd43f3fee6f020ec174b3c2114445695fd48c01.jpg">
+    <meta name="twitter:image" content="https://dongqui.github.io//assets/og-image-ee46bbc61b334e821e81534b1fd43f3fee6f020ec174b3c2114445695fd48c01.jpg">
+  
+
+  <link href="https://dongqui.github.io//feed.xml" type="application/rss+xml" rel="alternate" title="Dongjin Last 10 blog posts" />
+
+  
+
+  
+
+    
+      <link rel="icon" type="image/x-icon" href="/assets/favicon-light-a98c41efc5ed9fcc06ac664c9e2f7a9b3c3b2e0a52357d221fe382f6f4abc8fc.ico">
+      <link rel="apple-touch-icon" href="/assets/apple-touch-icon-light-87d1f2a3a19b1500e5c1626a0492025ca5f7f97d24540dc5900288e92112925a.png">
+      <link rel="stylesheet" type="text/css" href="/assets/light-bb1553a18d0f1ccfe1aabc010584c49b4277a88503216b78906ba719e30019c1.css">
+    
+
+  
+
+</head>
+
+<body>
+  <main>
+    <div class="grid grid-centered">
+      <div class="grid-cell">
+        <nav class="header-nav scrollappear">
+  <a href="/" class="header-logo" title="Dongjin">Dongjin</a>
+  <ul class="header-links">
+    
+    
+    
+      <li>
+        <a href="https://www.facebook.com/dongjin.kim.184007" rel="noreferrer noopener" target="_blank" title="Facebook">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-facebook">
+  <use href="/assets/facebook-72c99b26d37bee65607720abb23d26b44ef30cca1187f98b0d9305be1230b1bf.svg#icon-facebook" xlink:href="/assets/facebook-72c99b26d37bee65607720abb23d26b44ef30cca1187f98b0d9305be1230b1bf.svg#icon-facebook"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+    
+      <li>
+        <a href="https://github.com/dongqui" rel="noreferrer noopener" target="_blank" title="GitHub">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-github">
+  <use href="/assets/github-094f81040819f34343ee6ffff0980f17e2807b08b595eaaf66ae3554934fd78d.svg#icon-github" xlink:href="/assets/github-094f81040819f34343ee6ffff0980f17e2807b08b595eaaf66ae3554934fd78d.svg#icon-github"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      <li>
+        <a href="https://instagram.com/dongqui_/# Add your Instagram handle" rel="noreferrer noopener" target="_blank" title="Instagram">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-instagram">
+  <use href="/assets/instagram-37f85bc75b43ecc4c114d9a46f846327fe13c5893787c6afbcfef9d30d58bd9e.svg#icon-instagram" xlink:href="/assets/instagram-37f85bc75b43ecc4c114d9a46f846327fe13c5893787c6afbcfef9d30d58bd9e.svg#icon-instagram"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      <li>
+        <a href="mailto:dongqui9@gmail.com# Add your Email address" title="Email">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-email">
+  <use href="/assets/email-782473193bf750036fdb90e8daa075508a20509d01854c09f3237c144a3f0601.svg#icon-email" xlink:href="/assets/email-782473193bf750036fdb90e8daa075508a20509d01854c09f3237c144a3f0601.svg#icon-email"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+      <li>
+        <a href="/feed.xml" rel="noreferrer noopener" target="_blank" title="RSS">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-rss">
+  <use href="/assets/rss-541ec5cea9cefd10d2fcfec01888f3f231a8829940249835fa7b7b3a12ae0d0d.svg#icon-rss" xlink:href="/assets/rss-541ec5cea9cefd10d2fcfec01888f3f231a8829940249835fa7b7b3a12ae0d0d.svg#icon-rss"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+  </ul>
+</nav>
+
+
+  <ul class="header-tags scrollappear">
+    
+    
+      
+        <li><a href="/tag/DL">Dl</a></li>
+    
+      
+        <li><a href="/tag/JS">Js</a></li>
+    
+      
+        <li><a href="/tag/Javascript">Javascript</a></li>
+    
+      
+        <li><a href="/tag/Node">Node</a></li>
+    
+      
+        <li><a href="/tag/Web">Web</a></li>
+    
+      
+        <li><a href="/tag/aws">Aws</a></li>
+    
+      
+        <li><a href="/tag/css">Css</a></li>
+    
+      
+        <li><a href="/tag/docker">Docker</a></li>
+    
+      
+        <li><a href="/tag/git">Git</a></li>
+    
+      
+        <li><a href="/tag/guide">Guide</a></li>
+    
+      
+        <li>...</li>
+        <li><a href="/tags">Show all</a></li>
+        
+  </ul>
+
+
+        <article class="article scrollappear">
+          <header class="article-header">
+            <h1>Recoil - New state management library by Facebook</h1>
+            <p></p>
+            <div class="article-list-footer">
+  <span class="article-list-date">
+    June 17, 2020
+  </span>
+  <span class="article-list-divider">-</span>
+  <span class="article-list-minutes">
+    
+    
+      3 minute read
+    
+  </span>
+  <span class="article-list-divider">-</span>
+  <div class="article-list-tags">
+    
+      
+      <a href="/tag/web" title="See all posts with tag 'Web'">Web</a>
+    
+      
+      <a href="/tag/react" title="See all posts with tag 'React'">React</a>
+    
+  </div>
+</div>
+          </header>
+
+          <div class="article-content">
+            <p>지난 달, Facebook에서 React state 관리 라이브러리를 발표했다.</p>
+
+<p>문서에 Motivations를 보면 Global state, code splitting 등의 여러가지 이유가 적혀있는데, 그 중 가장 눈에 띄는 것은 concurrent mode와 보일러플레이트의 최소화였다.</p>
+
+<p>다른 것들은 사실상 그동안 사용해온 Redux나 Mobx로도 충분히 해결 가능한 부분인거 같고, 위에 두 가지에서 Recoil이 가지는 의의가 클 거 같다.</p>
+
+<p>React 팀에서 심혈을 기울여 만들고 있다고 알려진 concurrent mode가 나온다면, 기존의 외부에 존재하는 store가 리엑트의 스케쥴러에 접근하는 것은 쉽지 않아, Recoil이 필요할 거라고 한다.</p>
+
+<p>또, Redux 같은 것들은 비동기 처리를 위해 또 다른 라이브러리를 사용해야하고 state 맵핑 과정에서 번잡하게 느껴지는 보일러플레이트가 존재하는데, Recoil 같은 경우 비동기 처리도 내장되어있고, api 자체가 굉장히 단순화 되어있다.</p>
+
+<p>간단하게 살펴보면,</p>
+
+<p><strong>Atom</strong>은 조각 단위의 state다. <br />어떤 컴포넌트에서든 정의가 가능하고, 어떤 컴포넌트에서든 구독이 가능하다. atom 값이 변하면 atom을 구독하고 있는 모든 컴포넌트에 렌더링이 발생하게 된다.</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">    <span class="kd">const</span> <span class="nx">textState</span> <span class="o">=</span> <span class="nx">atom</span><span class="p">({</span>
+      <span class="na">key</span><span class="p">:</span> <span class="dl">'</span><span class="s1">textState</span><span class="dl">'</span><span class="p">,</span> <span class="c1">// unique ID (with respect to other atoms/selectors)</span>
+      <span class="na">default</span><span class="p">:</span> <span class="dl">''</span><span class="p">,</span> <span class="c1">// default value (aka initial value)</span>
+    <span class="p">});</span>
+    
+    <span class="kd">function</span> <span class="nx">CharacterCounter</span><span class="p">()</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="p">(</span>
+        <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+          <span class="o">&lt;</span><span class="nx">TextInput</span> <span class="o">/&gt;</span>
+          <span class="o">&lt;</span><span class="nx">CharacterCount</span> <span class="o">/&gt;</span>
+        <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>      <span class="p">);</span>
+    <span class="p">}</span>
+    
+    <span class="kd">function</span> <span class="nx">TextInput</span><span class="p">()</span> <span class="p">{</span>
+      <span class="kd">const</span> <span class="p">[</span><span class="nx">text</span><span class="p">,</span> <span class="nx">setText</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useRecoilState</span><span class="p">(</span><span class="nx">textState</span><span class="p">);</span>
+
+      <span class="kd">const</span> <span class="nx">onChange</span> <span class="o">=</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">setText</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
+      <span class="p">};</span>
+
+      <span class="k">return</span> <span class="p">(</span>
+        <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+          <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">text</span><span class="dl">"</span> <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="nx">text</span><span class="p">}</span> <span class="nx">onChange</span><span class="o">=</span><span class="p">{</span><span class="nx">onChange</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>          <span class="o">&lt;</span><span class="nx">br</span> <span class="o">/&gt;</span>
+          <span class="nx">Echo</span><span class="p">:</span> <span class="p">{</span><span class="nx">text</span><span class="p">}</span>
+        <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>      <span class="p">);</span>
+    <span class="p">}</span></code></pre></figure>
+
+<p><strong>Selector</strong>는 atom이나 selector를 불러와 state 값을 토대로, 원하는 값을 구해 반환한다. <br />
+atom과 마찬 가지로 모든 컴포넌트들이 구독할 수 있고, 값 변경시 렌더링 된다. <br />
+vuex의 getter 느낌!</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">    <span class="kd">const</span> <span class="nx">charCountState</span> <span class="o">=</span> <span class="nx">selector</span><span class="p">({</span>
+      <span class="na">key</span><span class="p">:</span> <span class="dl">'</span><span class="s1">charCountState</span><span class="dl">'</span><span class="p">,</span> <span class="c1">// unique ID (with respect to other atoms/selectors)</span>
+      <span class="na">get</span><span class="p">:</span> <span class="p">({</span><span class="kd">get</span><span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="kd">const</span> <span class="nx">text</span> <span class="o">=</span> <span class="kd">get</span><span class="p">(</span><span class="nx">textState</span><span class="p">);</span>
+
+        <span class="k">return</span> <span class="nx">text</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+      <span class="p">},</span>
+      
+      <span class="kd">function</span> <span class="nx">CharacterCount</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kd">const</span> <span class="nx">count</span> <span class="o">=</span> <span class="nx">useRecoilValue</span><span class="p">(</span><span class="nx">charCountState</span><span class="p">);</span>
+
+        <span class="k">return</span> <span class="o">&lt;&gt;</span><span class="nx">Character</span> <span class="na">Count</span><span class="p">:</span> <span class="p">{</span><span class="nx">count</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/&gt;</span><span class="err">;
+</span>      <span class="p">}</span>
+      
+    <span class="p">});</span></code></pre></figure>
+
+<p><br />
+<br />
+<br />
++
+아직 실험 단계로 실제 프로덕트에 쓰일 단계는 아니지만, 개인적으로 처음 오픈소스에 기여하는 경험을 하게 해준 아이라 정이  많이 가는 거 같다. 단순 오탈자 수정이었지만 짜릿짜릿한 경험이었다.</p>
+
+<p><a href="/assets/postimages/recoil1-1c2e8af72360d1f72c4fa9031f25d124383b45338958d3a3761c6451605fc622.png">
+  <img src="/assets/postimages/recoil1-1c2e8af72360d1f72c4fa9031f25d124383b45338958d3a3761c6451605fc622.png" alt="" class="zooming" data-rjs="/assets/postimages/recoil1-1c2e8af72360d1f72c4fa9031f25d124383b45338958d3a3761c6451605fc622.png" data-zooming-width="1792" data-zooming-height="238" />
+</a></p>
+
+<p>이 아이가 어서 무럭무럭 자랐으면 좋겠다!</p>
+
+<p><br />
+<br /></p>
+
+<h2 id="resource">Resource</h2>
+<p><a href="https://recoiljs.org/docs/introduction/motivation">https://recoiljs.org/docs/introduction/motivation</a><br />
+<a href="https://ui.toast.com/weekly-pick/ko_20200616/">https://ui.toast.com/weekly-pick/ko_20200616/</a></p>
+
+          </div>
+          <div class="article-share">
+            
+            
+            <a href="https://twitter.com/home?status=Recoil+-+New+state+management+library+by+Facebook%20-%20https://dongqui.github.io//posts/recoil" title="Share on Twitter" rel="noreferrer noopener" target="_blank">
+              <svg viewBox="0 0 512 512"><path d="M492 109.5c-17.4 7.7-36 12.9-55.6 15.3 20-12 35.4-31 42.6-53.6 -18.7 11.1-39.4 19.2-61.5 23.5C399.8 75.8 374.6 64 346.8 64c-53.5 0-96.8 43.4-96.8 96.9 0 7.6 0.8 15 2.5 22.1 -80.5-4-151.9-42.6-199.6-101.3 -8.3 14.3-13.1 31-13.1 48.7 0 33.6 17.2 63.3 43.2 80.7C67 210.7 52 206.3 39 199c0 0.4 0 0.8 0 1.2 0 47 33.4 86.1 77.7 95 -8.1 2.2-16.7 3.4-25.5 3.4 -6.2 0-12.3-0.6-18.2-1.8 12.3 38.5 48.1 66.5 90.5 67.3 -33.1 26-74.9 41.5-120.3 41.5 -7.8 0-15.5-0.5-23.1-1.4C62.8 432 113.7 448 168.3 448 346.6 448 444 300.3 444 172.2c0-4.2-0.1-8.4-0.3-12.5C462.6 146 479 129 492 109.5z"/></svg>
+            </a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://dongqui.github.io//posts/recoil" title="Share on Facebook" rel="noreferrer noopener" target="_blank">
+              <svg viewBox="0 0 512 512"><path d="M288 192v-38.1c0-17.2 3.8-25.9 30.5-25.9H352V64h-55.9c-68.5 0-91.1 31.4-91.1 85.3V192h-45v64h45v192h83V256h56.4l7.6-64H288z"/></svg>
+            </a>
+          </div>
+
+          
+        </article>
+        <footer class="footer scrollappear">
+  <p>
+    Chalk is a high quality, completely customizable, performant and 100% free
+    blog template for Jekyll built by
+    <a href="/about" title="About me">Nielsen Ramon</a>. Download it <a href="https://github.com/nielsenramon/chalk" rel="noreferrer noopener" target="_blank" title="Download Chalk">here</a>.
+  </p>
+</footer>
+
+      </div>
+    </div>
+  </main>
+  
+
+<script src="/assets/vendor-ec04f549bf06a348280d37d309c000e0374d58d6dc12c88480223cba94221c70.js" type="text/javascript"></script>
+
+
+  <script src="/assets/webfonts-96493456d319d1bf419afdf8701552d4d486fee6afd304897d4fd81eb4e0cc0b.js" type="text/javascript"></script>
+
+
+
+  <script src="/assets/scrollappear-e2da8ea567e418637e31266cc5302126eaa79f62a2273739086358b589a89ee6.js" type="text/javascript"></script>
+
+
+<script src="/assets/application-cfde13ac81ddaf4351b2e739603e2baf688d0fcc9aba613fe62bbb1c7b037fb9.js" type="text/javascript"></script>
+
+
+</body>
+</html>

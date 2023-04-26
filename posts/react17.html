@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Dongjin | React 17 Release</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="React 17 Release">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dongqui.github.io//posts/react17">
+  <meta property="og:description" content="">
+  <meta property="og:site_name" content="Dongjin">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="https://dongqui.github.io//posts/react17">
+  <meta name="twitter:title" content="React 17 Release">
+  <meta name="twitter:description" content="">
+
+  
+    <meta property="og:image" content="https://dongqui.github.io//assets/og-image-ee46bbc61b334e821e81534b1fd43f3fee6f020ec174b3c2114445695fd48c01.jpg">
+    <meta name="twitter:image" content="https://dongqui.github.io//assets/og-image-ee46bbc61b334e821e81534b1fd43f3fee6f020ec174b3c2114445695fd48c01.jpg">
+  
+
+  <link href="https://dongqui.github.io//feed.xml" type="application/rss+xml" rel="alternate" title="Dongjin Last 10 blog posts" />
+
+  
+
+  
+
+    
+      <link rel="icon" type="image/x-icon" href="/assets/favicon-light-a98c41efc5ed9fcc06ac664c9e2f7a9b3c3b2e0a52357d221fe382f6f4abc8fc.ico">
+      <link rel="apple-touch-icon" href="/assets/apple-touch-icon-light-87d1f2a3a19b1500e5c1626a0492025ca5f7f97d24540dc5900288e92112925a.png">
+      <link rel="stylesheet" type="text/css" href="/assets/light-bb1553a18d0f1ccfe1aabc010584c49b4277a88503216b78906ba719e30019c1.css">
+    
+
+  
+
+</head>
+
+<body>
+  <main>
+    <div class="grid grid-centered">
+      <div class="grid-cell">
+        <nav class="header-nav scrollappear">
+  <a href="/" class="header-logo" title="Dongjin">Dongjin</a>
+  <ul class="header-links">
+    
+    
+    
+      <li>
+        <a href="https://www.facebook.com/dongjin.kim.184007" rel="noreferrer noopener" target="_blank" title="Facebook">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-facebook">
+  <use href="/assets/facebook-72c99b26d37bee65607720abb23d26b44ef30cca1187f98b0d9305be1230b1bf.svg#icon-facebook" xlink:href="/assets/facebook-72c99b26d37bee65607720abb23d26b44ef30cca1187f98b0d9305be1230b1bf.svg#icon-facebook"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+    
+      <li>
+        <a href="https://github.com/dongqui" rel="noreferrer noopener" target="_blank" title="GitHub">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-github">
+  <use href="/assets/github-094f81040819f34343ee6ffff0980f17e2807b08b595eaaf66ae3554934fd78d.svg#icon-github" xlink:href="/assets/github-094f81040819f34343ee6ffff0980f17e2807b08b595eaaf66ae3554934fd78d.svg#icon-github"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      <li>
+        <a href="https://instagram.com/dongqui_/# Add your Instagram handle" rel="noreferrer noopener" target="_blank" title="Instagram">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-instagram">
+  <use href="/assets/instagram-37f85bc75b43ecc4c114d9a46f846327fe13c5893787c6afbcfef9d30d58bd9e.svg#icon-instagram" xlink:href="/assets/instagram-37f85bc75b43ecc4c114d9a46f846327fe13c5893787c6afbcfef9d30d58bd9e.svg#icon-instagram"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      <li>
+        <a href="mailto:dongqui9@gmail.com# Add your Email address" title="Email">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-email">
+  <use href="/assets/email-782473193bf750036fdb90e8daa075508a20509d01854c09f3237c144a3f0601.svg#icon-email" xlink:href="/assets/email-782473193bf750036fdb90e8daa075508a20509d01854c09f3237c144a3f0601.svg#icon-email"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+      <li>
+        <a href="/feed.xml" rel="noreferrer noopener" target="_blank" title="RSS">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-rss">
+  <use href="/assets/rss-541ec5cea9cefd10d2fcfec01888f3f231a8829940249835fa7b7b3a12ae0d0d.svg#icon-rss" xlink:href="/assets/rss-541ec5cea9cefd10d2fcfec01888f3f231a8829940249835fa7b7b3a12ae0d0d.svg#icon-rss"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+  </ul>
+</nav>
+
+
+  <ul class="header-tags scrollappear">
+    
+    
+      
+        <li><a href="/tag/DL">Dl</a></li>
+    
+      
+        <li><a href="/tag/JS">Js</a></li>
+    
+      
+        <li><a href="/tag/Javascript">Javascript</a></li>
+    
+      
+        <li><a href="/tag/Node">Node</a></li>
+    
+      
+        <li><a href="/tag/Web">Web</a></li>
+    
+      
+        <li><a href="/tag/aws">Aws</a></li>
+    
+      
+        <li><a href="/tag/css">Css</a></li>
+    
+      
+        <li><a href="/tag/docker">Docker</a></li>
+    
+      
+        <li><a href="/tag/git">Git</a></li>
+    
+      
+        <li><a href="/tag/guide">Guide</a></li>
+    
+      
+        <li>...</li>
+        <li><a href="/tags">Show all</a></li>
+        
+  </ul>
+
+
+        <article class="article scrollappear">
+          <header class="article-header">
+            <h1>React 17 Release</h1>
+            <p></p>
+            <div class="article-list-footer">
+  <span class="article-list-date">
+    October 26, 2020
+  </span>
+  <span class="article-list-divider">-</span>
+  <span class="article-list-minutes">
+    
+    
+      2 minute read
+    
+  </span>
+  <span class="article-list-divider">-</span>
+  <div class="article-list-tags">
+    
+      
+      <a href="/tag/web" title="See all posts with tag 'Web'">Web</a>
+    
+  </div>
+</div>
+          </header>
+
+          <div class="article-content">
+            <p>React 17 Release 요약</p>
+
+<h2 id="what-no-new-features">What: No New Features</h2>
+<p>이번 릴리즈는 내부적인 변경이 대부분으로, 외적으로 눈에 띄는 특색은 사실상 없다.</p>
+<ul>
+  <li>17 버전 이후로는 App전체를 한 번에 업그레이드하지 않고, 점진적으로 업그레이드 가능하게 되었다. (서로 다른 버전의 react가 공존 가능해졌다!)</li>
+  <li>리엑트와 외부 라이브러리가 공존하기 훨씬 쉬워졌다!</li>
+</ul>
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="how-changes-to-event-delegation">How: Changes to Event Delegation</h2>
+<p>리엑트 출시 이래로, 대부분의 이벤트 핸들러는  DOM node에 붙지 않고 모두 document로 위임되었다. 
+DOM 이벤트가 발생하게되면 리엑트는 호출해야하는 컴포넌트를 파악한 후, React event가 상위 컴포넌트로 버블링 되도록한다.
+그러나 숨겨진 뒷면을 보면, 이때는 이미 native event가 documnet (리엑트가 event handler를 위임한)에 도착한 시점이다.</p>
+
+<p>위의 이유로, 만약, 페이지에 여러 리엑트 버전이 존재할 경우, 내부 트리에서 e.stopPropagation() 실행하더라도 외부 트리에서는 이벤트를 계속 전달 받게 된다. 비슷한 예로, 리엑트 앱이 juqery 같은 외부 라이브러리로 감싸져있다면 버블링으로인해 예기치 못한 버그가 생길수 있다.</p>
+
+<p>17버전 부터는 이벤트 핸들러를 document가 아니라 리엑트 앱의 rootnode에 위임하여 위의 문제를 해결한다.
+<a href="/assets/postimages/react_17_delegation-41efe46268122e1835e403734fbe862eedf4bbf5a729262cd1bf9ac59601e3fb.png">
+  <img src="/assets/postimages/react_17_delegation-41efe46268122e1835e403734fbe862eedf4bbf5a729262cd1bf9ac59601e3fb.png" alt="" class="zooming" data-rjs="/assets/postimages/react_17_delegation-41efe46268122e1835e403734fbe862eedf4bbf5a729262cd1bf9ac59601e3fb.png" data-zooming-width="1680" data-zooming-height="1299" />
+</a></p>
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="other-breaking-changes">Other Breaking Changes</h2>
+<h3 id="aligning-with-browsers">Aligning with Browsers</h3>
+<ul>
+  <li>React onScroll event가 native event와는 달리 버블링되어 혼란 주던 점 수정.</li>
+  <li>React onFocus, onBlur가 native  focusin, focusout 사용 되도록 수정.</li>
+  <li>Capture phase events (e.g. onClickCapture)가 실제 브라우저 capture phase listeners. 사용하도록 수정.</li>
+</ul>
+
+<h3 id="no-event-pooling">No Event Pooling</h3>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">    <span class="kd">function</span> <span class="nx">handleChange</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">setData</span><span class="p">(</span><span class="nx">data</span> <span class="o">=&gt;</span> <span class="p">({</span>
+        <span class="p">...</span><span class="nx">data</span><span class="p">,</span>
+        <span class="c1">// This crashes in React 16 and earlier:</span>
+        <span class="na">text</span><span class="p">:</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span>
+      <span class="p">}));</span>
+    <span class="p">}</span></code></pre></figure>
+
+<p>리엑트가 이벤트 오브젝트를 eventpool에서 끌어다가 재사용하고 이벤트 핸들러 실행 후 이벤트 오브젝트의 프로퍼티를 null로 만들기 때문에 비동기적으로 접근시에 오류 발생!<br />
+퍼포먼스를 위해 만들었지만 현대 브라우저에서는 거의 효과가 없고, 혼란만 가중 시키므로 삭제.</p>
+
+<h3 id="effect-cleanup-timing">Effect Cleanup Timing</h3>
+<p>컴포넌트가 언마운트 되더라도 useEffect의 cleanup이 비동기로 실행 되도록 변경되어 더 나은 퍼포먼스와 안정성 확보!</p>
+
+<hr />
+
+<h3 id="resource">Resource</h3>
+<p><a href="https://ko.reactjs.org/blog/2020/08/10/react-v17-rc.html">https://ko.reactjs.org/blog/2020/08/10/react-v17-rc.html</a></p>
+
+
+          </div>
+          <div class="article-share">
+            
+            
+            <a href="https://twitter.com/home?status=React+17+Release%20-%20https://dongqui.github.io//posts/react17" title="Share on Twitter" rel="noreferrer noopener" target="_blank">
+              <svg viewBox="0 0 512 512"><path d="M492 109.5c-17.4 7.7-36 12.9-55.6 15.3 20-12 35.4-31 42.6-53.6 -18.7 11.1-39.4 19.2-61.5 23.5C399.8 75.8 374.6 64 346.8 64c-53.5 0-96.8 43.4-96.8 96.9 0 7.6 0.8 15 2.5 22.1 -80.5-4-151.9-42.6-199.6-101.3 -8.3 14.3-13.1 31-13.1 48.7 0 33.6 17.2 63.3 43.2 80.7C67 210.7 52 206.3 39 199c0 0.4 0 0.8 0 1.2 0 47 33.4 86.1 77.7 95 -8.1 2.2-16.7 3.4-25.5 3.4 -6.2 0-12.3-0.6-18.2-1.8 12.3 38.5 48.1 66.5 90.5 67.3 -33.1 26-74.9 41.5-120.3 41.5 -7.8 0-15.5-0.5-23.1-1.4C62.8 432 113.7 448 168.3 448 346.6 448 444 300.3 444 172.2c0-4.2-0.1-8.4-0.3-12.5C462.6 146 479 129 492 109.5z"/></svg>
+            </a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://dongqui.github.io//posts/react17" title="Share on Facebook" rel="noreferrer noopener" target="_blank">
+              <svg viewBox="0 0 512 512"><path d="M288 192v-38.1c0-17.2 3.8-25.9 30.5-25.9H352V64h-55.9c-68.5 0-91.1 31.4-91.1 85.3V192h-45v64h45v192h83V256h56.4l7.6-64H288z"/></svg>
+            </a>
+          </div>
+
+          
+        </article>
+        <footer class="footer scrollappear">
+  <p>
+    Chalk is a high quality, completely customizable, performant and 100% free
+    blog template for Jekyll built by
+    <a href="/about" title="About me">Nielsen Ramon</a>. Download it <a href="https://github.com/nielsenramon/chalk" rel="noreferrer noopener" target="_blank" title="Download Chalk">here</a>.
+  </p>
+</footer>
+
+      </div>
+    </div>
+  </main>
+  
+
+<script src="/assets/vendor-ec04f549bf06a348280d37d309c000e0374d58d6dc12c88480223cba94221c70.js" type="text/javascript"></script>
+
+
+  <script src="/assets/webfonts-96493456d319d1bf419afdf8701552d4d486fee6afd304897d4fd81eb4e0cc0b.js" type="text/javascript"></script>
+
+
+
+  <script src="/assets/scrollappear-e2da8ea567e418637e31266cc5302126eaa79f62a2273739086358b589a89ee6.js" type="text/javascript"></script>
+
+
+<script src="/assets/application-cfde13ac81ddaf4351b2e739603e2baf688d0fcc9aba613fe62bbb1c7b037fb9.js" type="text/javascript"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Dongjin | React-query</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="React-query">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dongqui.github.io//posts/react-query">
+  <meta property="og:description" content="">
+  <meta property="og:site_name" content="Dongjin">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="https://dongqui.github.io//posts/react-query">
+  <meta name="twitter:title" content="React-query">
+  <meta name="twitter:description" content="">
+
+  
+    <meta property="og:image" content="https://dongqui.github.io//assets/og-image-ee46bbc61b334e821e81534b1fd43f3fee6f020ec174b3c2114445695fd48c01.jpg">
+    <meta name="twitter:image" content="https://dongqui.github.io//assets/og-image-ee46bbc61b334e821e81534b1fd43f3fee6f020ec174b3c2114445695fd48c01.jpg">
+  
+
+  <link href="https://dongqui.github.io//feed.xml" type="application/rss+xml" rel="alternate" title="Dongjin Last 10 blog posts" />
+
+  
+
+  
+
+    
+      <link rel="icon" type="image/x-icon" href="/assets/favicon-light-a98c41efc5ed9fcc06ac664c9e2f7a9b3c3b2e0a52357d221fe382f6f4abc8fc.ico">
+      <link rel="apple-touch-icon" href="/assets/apple-touch-icon-light-87d1f2a3a19b1500e5c1626a0492025ca5f7f97d24540dc5900288e92112925a.png">
+      <link rel="stylesheet" type="text/css" href="/assets/light-bb1553a18d0f1ccfe1aabc010584c49b4277a88503216b78906ba719e30019c1.css">
+    
+
+  
+
+</head>
+
+<body>
+  <main>
+    <div class="grid grid-centered">
+      <div class="grid-cell">
+        <nav class="header-nav scrollappear">
+  <a href="/" class="header-logo" title="Dongjin">Dongjin</a>
+  <ul class="header-links">
+    
+    
+    
+      <li>
+        <a href="https://www.facebook.com/dongjin.kim.184007" rel="noreferrer noopener" target="_blank" title="Facebook">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-facebook">
+  <use href="/assets/facebook-72c99b26d37bee65607720abb23d26b44ef30cca1187f98b0d9305be1230b1bf.svg#icon-facebook" xlink:href="/assets/facebook-72c99b26d37bee65607720abb23d26b44ef30cca1187f98b0d9305be1230b1bf.svg#icon-facebook"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+    
+      <li>
+        <a href="https://github.com/dongqui" rel="noreferrer noopener" target="_blank" title="GitHub">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-github">
+  <use href="/assets/github-094f81040819f34343ee6ffff0980f17e2807b08b595eaaf66ae3554934fd78d.svg#icon-github" xlink:href="/assets/github-094f81040819f34343ee6ffff0980f17e2807b08b595eaaf66ae3554934fd78d.svg#icon-github"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      <li>
+        <a href="https://instagram.com/dongqui_/# Add your Instagram handle" rel="noreferrer noopener" target="_blank" title="Instagram">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-instagram">
+  <use href="/assets/instagram-37f85bc75b43ecc4c114d9a46f846327fe13c5893787c6afbcfef9d30d58bd9e.svg#icon-instagram" xlink:href="/assets/instagram-37f85bc75b43ecc4c114d9a46f846327fe13c5893787c6afbcfef9d30d58bd9e.svg#icon-instagram"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      <li>
+        <a href="mailto:dongqui9@gmail.com# Add your Email address" title="Email">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-email">
+  <use href="/assets/email-782473193bf750036fdb90e8daa075508a20509d01854c09f3237c144a3f0601.svg#icon-email" xlink:href="/assets/email-782473193bf750036fdb90e8daa075508a20509d01854c09f3237c144a3f0601.svg#icon-email"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+      <li>
+        <a href="/feed.xml" rel="noreferrer noopener" target="_blank" title="RSS">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-rss">
+  <use href="/assets/rss-541ec5cea9cefd10d2fcfec01888f3f231a8829940249835fa7b7b3a12ae0d0d.svg#icon-rss" xlink:href="/assets/rss-541ec5cea9cefd10d2fcfec01888f3f231a8829940249835fa7b7b3a12ae0d0d.svg#icon-rss"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+  </ul>
+</nav>
+
+
+  <ul class="header-tags scrollappear">
+    
+    
+      
+        <li><a href="/tag/DL">Dl</a></li>
+    
+      
+        <li><a href="/tag/JS">Js</a></li>
+    
+      
+        <li><a href="/tag/Javascript">Javascript</a></li>
+    
+      
+        <li><a href="/tag/Node">Node</a></li>
+    
+      
+        <li><a href="/tag/Web">Web</a></li>
+    
+      
+        <li><a href="/tag/aws">Aws</a></li>
+    
+      
+        <li><a href="/tag/css">Css</a></li>
+    
+      
+        <li><a href="/tag/docker">Docker</a></li>
+    
+      
+        <li><a href="/tag/git">Git</a></li>
+    
+      
+        <li><a href="/tag/guide">Guide</a></li>
+    
+      
+        <li>...</li>
+        <li><a href="/tags">Show all</a></li>
+        
+  </ul>
+
+
+        <article class="article scrollappear">
+          <header class="article-header">
+            <h1>React-query</h1>
+            <p></p>
+            <div class="article-list-footer">
+  <span class="article-list-date">
+    August 1, 2021
+  </span>
+  <span class="article-list-divider">-</span>
+  <span class="article-list-minutes">
+    
+    
+      3 minute read
+    
+  </span>
+  <span class="article-list-divider">-</span>
+  <div class="article-list-tags">
+    
+      
+      <a href="/tag/react" title="See all posts with tag 'React'">React</a>
+    
+  </div>
+</div>
+          </header>
+
+          <div class="article-content">
+            <p>사랑해요… React-query!</p>
+
+<h2 id="등장-배경">등장 배경</h2>
+<p>react-query는 서버 상태와 클라이언트의 상태가 분명하게 다르기 때문에, 관리하는 방법 또한 달라야 한다는 생각에서 시작한다.<br /><br />
+react-query가 말하는 서버 상태란,</p>
+<ul>
+  <li>서버 상태는 클라이언트에서 컨트롤 불가한 곳에 있다. (remote)</li>
+  <li>fetch나 update를 위한 비동기 api가 필요하다.</li>
+  <li>다른 사용자에 의해 데이터가 변경 될 수 있다.</li>
+  <li>어느 순간, 데이터가 최신화 되어있지 않은 상태가 될 수 있다.</li>
+</ul>
+
+<p>위 와 같은 성질 때문에 생기는 아래의 문제들을 react-query가 처리해준다!</p>
+
+<ul>
+  <li>같은 데이터에 대한 중복 요청</li>
+  <li>백그라운드에서 데이터 최신화</li>
+  <li>서버에서 업데이트 된 데이터를 가능한 빨리 적용</li>
+  <li>페이지네이션, 레이지 로딩 최적화</li>
+  <li>서버 상태에 관한 메모리 관리</li>
+  <li>구조적으로 공유되는 쿼리는 메모라이즈!</li>
+</ul>
+
+<h2 id="예제-코드">예제 코드</h2>
+
+<figure class="highlight"><pre><code class="language-jsx" data-lang="jsx">    <span class="k">import</span> <span class="p">{</span> <span class="nx">QueryClient</span><span class="p">,</span> <span class="nx">QueryClientProvider</span><span class="p">,</span> <span class="nx">useQuery</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react-query</span><span class="dl">'</span>
+     
+     <span class="kd">const</span> <span class="nx">queryClient</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">QueryClient</span><span class="p">()</span>
+     
+     <span class="k">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
+       <span class="k">return</span> <span class="p">(</span>
+         <span class="p">&lt;</span><span class="nc">QueryClientProvider</span> <span class="na">client</span><span class="p">=</span><span class="si">{</span><span class="nx">queryClient</span><span class="si">}</span><span class="p">&gt;</span>
+           <span class="p">&lt;</span><span class="nc">Example</span> <span class="p">/&gt;</span>
+         <span class="p">&lt;/</span><span class="nc">QueryClientProvider</span><span class="p">&gt;</span>
+       <span class="p">)</span>
+     <span class="p">}</span>
+     
+     <span class="kd">function</span> <span class="nx">Example</span><span class="p">()</span> <span class="p">{</span>
+     <span class="c1">// 인자로 전달되는 'repoData'는 유니크한 키로 사용 되어, 쿼리 인스턴스를 공유할 수 있게 된다.</span>
+     <span class="c1">// 따라서, 같은 키를 사용하면 여러군데서 쿼리를 요청 하더라도 결과를 공유하고, 중복 요청을 막아준다.</span>
+       <span class="kd">const</span> <span class="p">{</span> <span class="nx">isLoading</span><span class="p">,</span> <span class="nx">error</span><span class="p">,</span> <span class="nx">data</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">useQuery</span><span class="p">(</span><span class="dl">'</span><span class="s1">repoData</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span>
+         <span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">https://api.github.com/repos/tannerlinsley/react-query</span><span class="dl">'</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">res</span> <span class="o">=&gt;</span>
+           <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">()</span>
+         <span class="p">)</span>
+       <span class="p">)</span>
+     
+       <span class="k">if</span> <span class="p">(</span><span class="nx">isLoading</span><span class="p">)</span> <span class="k">return</span> <span class="dl">'</span><span class="s1">Loading...</span><span class="dl">'</span>
+     
+       <span class="k">if</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="k">return</span> <span class="dl">'</span><span class="s1">An error has occurred: </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">error</span><span class="p">.</span><span class="nx">message</span>
+     
+       <span class="k">return</span> <span class="p">(</span>
+         <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+           <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="si">{</span><span class="nx">data</span><span class="p">.</span><span class="nx">name</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+           <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="si">{</span><span class="nx">data</span><span class="p">.</span><span class="nx">description</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+           <span class="p">&lt;</span><span class="nt">strong</span><span class="p">&gt;</span>👀 <span class="si">{</span><span class="nx">data</span><span class="p">.</span><span class="nx">subscribers_count</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span><span class="si">{</span><span class="dl">'</span><span class="s1"> </span><span class="dl">'</span><span class="si">}</span>
+           <span class="p">&lt;</span><span class="nt">strong</span><span class="p">&gt;</span>✨ <span class="si">{</span><span class="nx">data</span><span class="p">.</span><span class="nx">stargazers_count</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span><span class="si">{</span><span class="dl">'</span><span class="s1"> </span><span class="dl">'</span><span class="si">}</span>
+           <span class="p">&lt;</span><span class="nt">strong</span><span class="p">&gt;</span>🍴 <span class="si">{</span><span class="nx">data</span><span class="p">.</span><span class="nx">forks_count</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span>
+         <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+       <span class="p">)</span>
+     <span class="p">}</span></code></pre></figure>
+
+<h2 id="query-life-cycle">Query Life cycle</h2>
+<ol>
+  <li>
+    <h3 id="fresh">fresh</h3>
+    <ul>
+      <li>새롭게 추가된 쿼리 인스턴스 → active 상태의 시작</li>
+    </ul>
+  </li>
+  <li>
+    <h3 id="fetching">fetching</h3>
+    <ul>
+      <li>요청을 수행하는 중인 쿼리</li>
+    </ul>
+  </li>
+  <li>
+    <h3 id="stale">stale</h3>
+    <ul>
+      <li>패칭완료.</li>
+      <li>인스턴스를 데이터가 최신화 되지 않았다고 간주하며 refetching 대상.</li>
+      <li>특정 쿼리가 stale된 상태에서 같은 쿼리를 useQuery로 또 호출해 마운트를 시도한다면 캐싱된 데이터를 우선 반환.</li>
+      <li>Stale 상태에서 Refetch되는 시점
+        <ul>
+          <li>새 쿼리가 마운트 될 때</li>
+          <li>윈도우가 포커스 될 때 (다른 브라우저 탭 갔다가 오면 refetch 된다..!)</li>
+          <li>네트워크가 다시 연결될 때</li>
+          <li>refetch interval을 직접 설정했을 때.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <h3 id="inactive">inactive</h3>
+    <ul>
+      <li>쿼리 인스턴스를 observe하는 컴포넌트가 없는 상태 (단, fetching 중일 경우 observe 되지 않아도 fetching상태를 유지한다).</li>
+      <li>5분 간격으로 아예 gc된다.</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="예시-시나리오-cachetime-of-5-minutes-staletime-of-0">예시 시나리오 (cacheTime of 5 minutes, staleTime of 0)</h2>
+<ol>
+  <li>useQuery(‘todos’, fetchTodos)가 마운트 됨</li>
+  <li>‘todos’ key를 가진 쿼리가 실행된적이 없기 때문에 loading state를 가지게 되고, 네트워크 요청을 만든다. (fetching 상태)</li>
+  <li>마운트된 쿼리는 stale 상태로 들어감 (staleTime을 지정하지 않으면 useQuery의 기본 staleTime은 0이다. 즉 바로 stale 됨)</li>
+  <li>두 번째 useQuery(‘todos’, fetchTodos)가 어디선가 또 마운트 됨</li>
+  <li>useQuery(‘todos’, fetchTodos)가 이미 stale 상태에 있기 때문에 일단 케쉬된걸 두 번째 애한테 넘겨줌</li>
+  <li>백그라운드에서 refetch가 발생하고(리퀘스트는 한 번만) 양쪽의 인스턴의 데이터를 업데이트 해줌</li>
+  <li>더이상 useQuery(‘todos’, fetchTodos)을 사용하는 컴포넌트가 없어서 unmount 됨 (inactive)</li>
+  <li>5분 동안 inactive면 가비지컬렉터가 집어감.</li>
+</ol>
+
+<h2 id="사용-후기">사용 후기</h2>
+<p>결론부터 말하면, 계속 쓰고싶다!<br />
+가장 마음에 드는 점은,  API 요청/응답과 관련한 data, error, loading 상태를 직접 처리해야했던 모든 과정이 정말 간편하게 구현된다!<br />
+또, 케쉬나 데이터 최신화를 백그라운드에서 알아서 처리해주기 때문에 기능면에서도 굉장히 좋다.<br /></p>
+
+<p>다만, 강력한 기능을 가지고 있는만큼 조심히 사용해야 되겠다. 실제로, 로그아웃을 했음에도 데이터가 케쉬로 남아 사용자 정보를 노출 시킨적이 있다…..ㄷㄷ  <br />
+커스텀 가능한 부분도 많고, optimistic-updates, pagination,  load-more-infinite-scroll 등 제공하는 기능도 굉장히 많아서 러닝 커브가 꽤 있어 보이지만, 학습할 가치가 충분히 있어보인다!</p>
+
+<h2 id="resource">Resource</h2>
+<p><a href="https://react-query.tanstack.com/">https://react-query.tanstack.com/</a></p>
+
+          </div>
+          <div class="article-share">
+            
+            
+            <a href="https://twitter.com/home?status=React-query%20-%20https://dongqui.github.io//posts/react-query" title="Share on Twitter" rel="noreferrer noopener" target="_blank">
+              <svg viewBox="0 0 512 512"><path d="M492 109.5c-17.4 7.7-36 12.9-55.6 15.3 20-12 35.4-31 42.6-53.6 -18.7 11.1-39.4 19.2-61.5 23.5C399.8 75.8 374.6 64 346.8 64c-53.5 0-96.8 43.4-96.8 96.9 0 7.6 0.8 15 2.5 22.1 -80.5-4-151.9-42.6-199.6-101.3 -8.3 14.3-13.1 31-13.1 48.7 0 33.6 17.2 63.3 43.2 80.7C67 210.7 52 206.3 39 199c0 0.4 0 0.8 0 1.2 0 47 33.4 86.1 77.7 95 -8.1 2.2-16.7 3.4-25.5 3.4 -6.2 0-12.3-0.6-18.2-1.8 12.3 38.5 48.1 66.5 90.5 67.3 -33.1 26-74.9 41.5-120.3 41.5 -7.8 0-15.5-0.5-23.1-1.4C62.8 432 113.7 448 168.3 448 346.6 448 444 300.3 444 172.2c0-4.2-0.1-8.4-0.3-12.5C462.6 146 479 129 492 109.5z"/></svg>
+            </a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://dongqui.github.io//posts/react-query" title="Share on Facebook" rel="noreferrer noopener" target="_blank">
+              <svg viewBox="0 0 512 512"><path d="M288 192v-38.1c0-17.2 3.8-25.9 30.5-25.9H352V64h-55.9c-68.5 0-91.1 31.4-91.1 85.3V192h-45v64h45v192h83V256h56.4l7.6-64H288z"/></svg>
+            </a>
+          </div>
+
+          
+        </article>
+        <footer class="footer scrollappear">
+  <p>
+    Chalk is a high quality, completely customizable, performant and 100% free
+    blog template for Jekyll built by
+    <a href="/about" title="About me">Nielsen Ramon</a>. Download it <a href="https://github.com/nielsenramon/chalk" rel="noreferrer noopener" target="_blank" title="Download Chalk">here</a>.
+  </p>
+</footer>
+
+      </div>
+    </div>
+  </main>
+  
+
+<script src="/assets/vendor-ec04f549bf06a348280d37d309c000e0374d58d6dc12c88480223cba94221c70.js" type="text/javascript"></script>
+
+
+  <script src="/assets/webfonts-96493456d319d1bf419afdf8701552d4d486fee6afd304897d4fd81eb4e0cc0b.js" type="text/javascript"></script>
+
+
+
+  <script src="/assets/scrollappear-e2da8ea567e418637e31266cc5302126eaa79f62a2273739086358b589a89ee6.js" type="text/javascript"></script>
+
+
+<script src="/assets/application-cfde13ac81ddaf4351b2e739603e2baf688d0fcc9aba613fe62bbb1c7b037fb9.js" type="text/javascript"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Dongjin | Execution Context</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="Execution Context">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dongqui.github.io//posts/execution-context">
+  <meta property="og:description" content="">
+  <meta property="og:site_name" content="Dongjin">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="https://dongqui.github.io//posts/execution-context">
+  <meta name="twitter:title" content="Execution Context">
+  <meta name="twitter:description" content="">
+
+  
+    <meta property="og:image" content="https://dongqui.github.io//assets/og-image-ee46bbc61b334e821e81534b1fd43f3fee6f020ec174b3c2114445695fd48c01.jpg">
+    <meta name="twitter:image" content="https://dongqui.github.io//assets/og-image-ee46bbc61b334e821e81534b1fd43f3fee6f020ec174b3c2114445695fd48c01.jpg">
+  
+
+  <link href="https://dongqui.github.io//feed.xml" type="application/rss+xml" rel="alternate" title="Dongjin Last 10 blog posts" />
+
+  
+
+  
+
+    
+      <link rel="icon" type="image/x-icon" href="/assets/favicon-light-a98c41efc5ed9fcc06ac664c9e2f7a9b3c3b2e0a52357d221fe382f6f4abc8fc.ico">
+      <link rel="apple-touch-icon" href="/assets/apple-touch-icon-light-87d1f2a3a19b1500e5c1626a0492025ca5f7f97d24540dc5900288e92112925a.png">
+      <link rel="stylesheet" type="text/css" href="/assets/light-bb1553a18d0f1ccfe1aabc010584c49b4277a88503216b78906ba719e30019c1.css">
+    
+
+  
+
+</head>
+
+<body>
+  <main>
+    <div class="grid grid-centered">
+      <div class="grid-cell">
+        <nav class="header-nav scrollappear">
+  <a href="/" class="header-logo" title="Dongjin">Dongjin</a>
+  <ul class="header-links">
+    
+    
+    
+      <li>
+        <a href="https://www.facebook.com/dongjin.kim.184007" rel="noreferrer noopener" target="_blank" title="Facebook">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-facebook">
+  <use href="/assets/facebook-72c99b26d37bee65607720abb23d26b44ef30cca1187f98b0d9305be1230b1bf.svg#icon-facebook" xlink:href="/assets/facebook-72c99b26d37bee65607720abb23d26b44ef30cca1187f98b0d9305be1230b1bf.svg#icon-facebook"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+    
+      <li>
+        <a href="https://github.com/dongqui" rel="noreferrer noopener" target="_blank" title="GitHub">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-github">
+  <use href="/assets/github-094f81040819f34343ee6ffff0980f17e2807b08b595eaaf66ae3554934fd78d.svg#icon-github" xlink:href="/assets/github-094f81040819f34343ee6ffff0980f17e2807b08b595eaaf66ae3554934fd78d.svg#icon-github"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      <li>
+        <a href="https://instagram.com/dongqui_/# Add your Instagram handle" rel="noreferrer noopener" target="_blank" title="Instagram">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-instagram">
+  <use href="/assets/instagram-37f85bc75b43ecc4c114d9a46f846327fe13c5893787c6afbcfef9d30d58bd9e.svg#icon-instagram" xlink:href="/assets/instagram-37f85bc75b43ecc4c114d9a46f846327fe13c5893787c6afbcfef9d30d58bd9e.svg#icon-instagram"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      <li>
+        <a href="mailto:dongqui9@gmail.com# Add your Email address" title="Email">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-email">
+  <use href="/assets/email-782473193bf750036fdb90e8daa075508a20509d01854c09f3237c144a3f0601.svg#icon-email" xlink:href="/assets/email-782473193bf750036fdb90e8daa075508a20509d01854c09f3237c144a3f0601.svg#icon-email"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+      <li>
+        <a href="/feed.xml" rel="noreferrer noopener" target="_blank" title="RSS">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-rss">
+  <use href="/assets/rss-541ec5cea9cefd10d2fcfec01888f3f231a8829940249835fa7b7b3a12ae0d0d.svg#icon-rss" xlink:href="/assets/rss-541ec5cea9cefd10d2fcfec01888f3f231a8829940249835fa7b7b3a12ae0d0d.svg#icon-rss"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+  </ul>
+</nav>
+
+
+  <ul class="header-tags scrollappear">
+    
+    
+      
+        <li><a href="/tag/DL">Dl</a></li>
+    
+      
+        <li><a href="/tag/JS">Js</a></li>
+    
+      
+        <li><a href="/tag/Javascript">Javascript</a></li>
+    
+      
+        <li><a href="/tag/Node">Node</a></li>
+    
+      
+        <li><a href="/tag/Web">Web</a></li>
+    
+      
+        <li><a href="/tag/aws">Aws</a></li>
+    
+      
+        <li><a href="/tag/css">Css</a></li>
+    
+      
+        <li><a href="/tag/docker">Docker</a></li>
+    
+      
+        <li><a href="/tag/git">Git</a></li>
+    
+      
+        <li><a href="/tag/guide">Guide</a></li>
+    
+      
+        <li>...</li>
+        <li><a href="/tags">Show all</a></li>
+        
+  </ul>
+
+
+        <article class="article scrollappear">
+          <header class="article-header">
+            <h1>Execution Context</h1>
+            <p></p>
+            <div class="article-list-footer">
+  <span class="article-list-date">
+    November 3, 2019
+  </span>
+  <span class="article-list-divider">-</span>
+  <span class="article-list-minutes">
+    
+    
+      3 minute read
+    
+  </span>
+  <span class="article-list-divider">-</span>
+  <div class="article-list-tags">
+    
+      
+      <a href="/tag/javascript" title="See all posts with tag 'javascript'">javascript</a>
+    
+  </div>
+</div>
+          </header>
+
+          <div class="article-content">
+            <p>실행 컨테스트는 쉽게 말해 코드가 실행되고 있는 범위로 global, eval, function 만날 때 생성 된다.
+각각의 실행 컨텍스트는 stack구조로 쌓이게 되고 마지막에 global code의 실행이 끝나면 프로그램이 종료된다.</p>
+
+<h2 id="creation-phase">Creation Phase</h2>
+<ol>
+  <li>LexicalEnvironment 컴포넌트 생성
+    <ul>
+      <li>변수와 해당 변수에 대입된 값이 매핑 됨
+        <ul>
+          <li><strong>Environmnet Records</strong>: Lexical environment 안에 함수와 변수를 기록한다.
+            <ul>
+              <li><strong>Declarative environment record</strong>: 변수와 함수 선언을 저장하는 곳이다.</li>
+              <li><strong>Object environment record</strong>: 전역 문맥과 with문에 나타나는 변수와 함수의 연관을 정의</li>
+            </ul>
+          </li>
+          <li>
+            <p><strong>Reference to the outer environment</strong>: 현재의 Lexical environment에서 변수를 찾지 못하면 외부 환경 참조</p>
+          </li>
+          <li><strong>This binding</strong>: this 값 결정</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>VariableEnvironment 컴포넌트 생성
+    <ul>
+      <li>Lexical Environment와 거의 비슷하다. 다만 Lexical에서는 함수 선언과 변수 let,const의 바인딩을 저장하고 Varialbe에서는 변수 var만 저장한다.</li>
+    </ul>
+  </li>
+</ol>
+
+<p><br /><br /><br /></p>
+<h2 id="execution-phase">Execution Phase</h2>
+<p>Creation Phase에서 변수와 함수 선언 된것은 메모리에 저장된 상태(호이스팅)에서 자바스트립트 코드가 실행되는 때! 
+<br /><br /><br /></p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">    <span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+    <span class="kd">const</span> <span class="nx">b</span> <span class="o">=</span> <span class="mi">30</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">c</span><span class="p">;</span>
+    <span class="kd">function</span> <span class="nx">multiply</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">f</span><span class="p">)</span> <span class="p">{</span>
+     <span class="kd">var</span> <span class="nx">g</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+     <span class="k">return</span> <span class="nx">e</span> <span class="o">*</span> <span class="nx">f</span> <span class="o">*</span> <span class="nx">g</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nx">c</span> <span class="o">=</span> <span class="nx">multiply</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">);</span>
+    </code></pre></figure>
+
+<p>위의 코드가 실행되면,
+<br /><br /><br /></p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">    <span class="nx">GlobalExectionContext</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="na">LexicalEnvironment</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">EnvironmentRecord</span><span class="p">:</span> <span class="p">{</span>
+          <span class="na">Type</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Object</span><span class="dl">"</span><span class="p">,</span>
+          <span class="c1">// Identifier bindings go here</span>
+          <span class="na">a</span><span class="p">:</span> <span class="o">&lt;</span> <span class="nx">uninitialized</span> <span class="o">&gt;</span><span class="p">,</span>
+          <span class="na">b</span><span class="p">:</span> <span class="o">&lt;</span> <span class="nx">uninitialized</span> <span class="o">&gt;</span><span class="p">,</span>
+          <span class="na">multiply</span><span class="p">:</span> <span class="o">&lt;</span> <span class="nx">func</span> <span class="o">&gt;</span>
+        <span class="p">}</span>
+        <span class="nl">outer</span><span class="p">:</span> <span class="o">&lt;</span><span class="kc">null</span><span class="o">&gt;</span><span class="p">,</span>
+        <span class="na">ThisBinding</span><span class="p">:</span> <span class="o">&lt;</span><span class="nx">Global</span> <span class="nb">Object</span><span class="o">&gt;</span>
+      <span class="p">},</span>
+      <span class="na">VariableEnvironment</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">EnvironmentRecord</span><span class="p">:</span> <span class="p">{</span>
+          <span class="na">Type</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Object</span><span class="dl">"</span><span class="p">,</span>
+          <span class="c1">// Identifier bindings go here</span>
+          <span class="na">c</span><span class="p">:</span> <span class="kc">undefined</span><span class="p">,</span>
+        <span class="p">}</span>
+        <span class="nl">outer</span><span class="p">:</span> <span class="o">&lt;</span><span class="kc">null</span><span class="o">&gt;</span><span class="p">,</span>
+        <span class="na">ThisBinding</span><span class="p">:</span> <span class="o">&lt;</span><span class="nx">Global</span> <span class="nb">Object</span><span class="o">&gt;</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+    </code></pre></figure>
+
+<p>글로벌 실행 컨텍스트가 실행되고, 위와 같이 Creation Phase때 만들어진 것들을 보게된다</p>
+
+<p><br /><br /><br /></p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">    <span class="nx">GlobalExectionContext</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">LexicalEnvironment</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">EnvironmentRecord</span><span class="p">:</span> <span class="p">{</span>
+          <span class="na">Type</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Object</span><span class="dl">"</span><span class="p">,</span>
+          <span class="c1">// Identifier bindings go here</span>
+          <span class="na">a</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+          <span class="na">b</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
+          <span class="na">multiply</span><span class="p">:</span> <span class="o">&lt;</span> <span class="nx">func</span> <span class="o">&gt;</span>
+        <span class="p">}</span>
+        <span class="nl">outer</span><span class="p">:</span> <span class="o">&lt;</span><span class="kc">null</span><span class="o">&gt;</span><span class="p">,</span>
+        <span class="na">ThisBinding</span><span class="p">:</span> <span class="o">&lt;</span><span class="nx">Global</span> <span class="nb">Object</span><span class="o">&gt;</span>
+      <span class="p">},</span>
+    <span class="na">VariableEnvironment</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">EnvironmentRecord</span><span class="p">:</span> <span class="p">{</span>
+          <span class="na">Type</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Object</span><span class="dl">"</span><span class="p">,</span>
+          <span class="c1">// Identifier bindings go here</span>
+          <span class="na">c</span><span class="p">:</span> <span class="kc">undefined</span><span class="p">,</span>
+        <span class="p">}</span>
+        <span class="nl">outer</span><span class="p">:</span> <span class="o">&lt;</span><span class="kc">null</span><span class="o">&gt;</span><span class="p">,</span>
+        <span class="na">ThisBinding</span><span class="p">:</span> <span class="o">&lt;</span><span class="nx">Global</span> <span class="nb">Object</span><span class="o">&gt;</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+    </code></pre></figure>
+
+<p>코드 중 변수를 만나면 매핑 되어있는 변수에 값을 할당하고,
+<br /><br /><br /></p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">    <span class="nx">FunctionExectionContext</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">LexicalEnvironment</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">EnvironmentRecord</span><span class="p">:</span> <span class="p">{</span>
+          <span class="na">Type</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Declarative</span><span class="dl">"</span><span class="p">,</span>
+          <span class="c1">// Identifier bindings go here</span>
+          <span class="na">Arguments</span><span class="p">:</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span> <span class="na">length</span><span class="p">:</span> <span class="mi">2</span><span class="p">},</span>
+        <span class="p">},</span>
+        <span class="na">outer</span><span class="p">:</span> <span class="o">&lt;</span><span class="nx">GlobalLexicalEnvironment</span><span class="o">&gt;</span><span class="p">,</span>
+        <span class="na">ThisBinding</span><span class="p">:</span> <span class="o">&lt;</span><span class="nx">Global</span> <span class="nb">Object</span> <span class="nx">or</span> <span class="kc">undefined</span><span class="o">&gt;</span><span class="p">,</span>
+      <span class="p">},</span>
+    <span class="na">VariableEnvironment</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">EnvironmentRecord</span><span class="p">:</span> <span class="p">{</span>
+          <span class="na">Type</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Declarative</span><span class="dl">"</span><span class="p">,</span>
+          <span class="c1">// Identifier bindings go here</span>
+          <span class="na">g</span><span class="p">:</span> <span class="kc">undefined</span>
+        <span class="p">},</span>
+        <span class="na">outer</span><span class="p">:</span> <span class="o">&lt;</span><span class="nx">GlobalLexicalEnvironment</span><span class="o">&gt;</span><span class="p">,</span>
+        <span class="na">ThisBinding</span><span class="p">:</span> <span class="o">&lt;</span><span class="nx">Global</span> <span class="nb">Object</span> <span class="nx">or</span> <span class="kc">undefined</span><span class="o">&gt;</span>
+      <span class="p">}</span>
+    <span class="p">}</span></code></pre></figure>
+
+<p>함수인 multiply(20, 30)를 만나면 새로운 실행 컨텍스트가 시작된다.</p>
+
+<p><br /><br />
+<a href="/assets/postimages/exec_context01-8cff8606a70353c8897ca45548ac2735ce76e832ae054e9a78e63babbf663983.png">
+  <img src="/assets/postimages/exec_context01-8cff8606a70353c8897ca45548ac2735ce76e832ae054e9a78e63babbf663983.png" alt="" class="zooming" data-rjs="/assets/postimages/exec_context01-8cff8606a70353c8897ca45548ac2735ce76e832ae054e9a78e63babbf663983.png" data-zooming-width="1800" data-zooming-height="320" />
+</a></p>
+
+<p>그렇게, 스택 구조로 반복
+<br /><br /></p>
+
+<h2 id="resource">Resource</h2>
+
+<p><a href="https://blog.bitsrc.io/understanding-execution-context-and-execution-stack-in-javascript-1c9ea8642dd0">https://blog.bitsrc.io/understanding-execution-context-and-execution-stack-in-javascript-1c9ea8642dd0</a><br />
+<a href="https://meetup.toast.com/posts/129">https://meetup.toast.com/posts/129</a></p>
+
+          </div>
+          <div class="article-share">
+            
+            
+            <a href="https://twitter.com/home?status=Execution+Context%20-%20https://dongqui.github.io//posts/execution-context" title="Share on Twitter" rel="noreferrer noopener" target="_blank">
+              <svg viewBox="0 0 512 512"><path d="M492 109.5c-17.4 7.7-36 12.9-55.6 15.3 20-12 35.4-31 42.6-53.6 -18.7 11.1-39.4 19.2-61.5 23.5C399.8 75.8 374.6 64 346.8 64c-53.5 0-96.8 43.4-96.8 96.9 0 7.6 0.8 15 2.5 22.1 -80.5-4-151.9-42.6-199.6-101.3 -8.3 14.3-13.1 31-13.1 48.7 0 33.6 17.2 63.3 43.2 80.7C67 210.7 52 206.3 39 199c0 0.4 0 0.8 0 1.2 0 47 33.4 86.1 77.7 95 -8.1 2.2-16.7 3.4-25.5 3.4 -6.2 0-12.3-0.6-18.2-1.8 12.3 38.5 48.1 66.5 90.5 67.3 -33.1 26-74.9 41.5-120.3 41.5 -7.8 0-15.5-0.5-23.1-1.4C62.8 432 113.7 448 168.3 448 346.6 448 444 300.3 444 172.2c0-4.2-0.1-8.4-0.3-12.5C462.6 146 479 129 492 109.5z"/></svg>
+            </a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://dongqui.github.io//posts/execution-context" title="Share on Facebook" rel="noreferrer noopener" target="_blank">
+              <svg viewBox="0 0 512 512"><path d="M288 192v-38.1c0-17.2 3.8-25.9 30.5-25.9H352V64h-55.9c-68.5 0-91.1 31.4-91.1 85.3V192h-45v64h45v192h83V256h56.4l7.6-64H288z"/></svg>
+            </a>
+          </div>
+
+          
+        </article>
+        <footer class="footer scrollappear">
+  <p>
+    Chalk is a high quality, completely customizable, performant and 100% free
+    blog template for Jekyll built by
+    <a href="/about" title="About me">Nielsen Ramon</a>. Download it <a href="https://github.com/nielsenramon/chalk" rel="noreferrer noopener" target="_blank" title="Download Chalk">here</a>.
+  </p>
+</footer>
+
+      </div>
+    </div>
+  </main>
+  
+
+<script src="/assets/vendor-ec04f549bf06a348280d37d309c000e0374d58d6dc12c88480223cba94221c70.js" type="text/javascript"></script>
+
+
+  <script src="/assets/webfonts-96493456d319d1bf419afdf8701552d4d486fee6afd304897d4fd81eb4e0cc0b.js" type="text/javascript"></script>
+
+
+
+  <script src="/assets/scrollappear-e2da8ea567e418637e31266cc5302126eaa79f62a2273739086358b589a89ee6.js" type="text/javascript"></script>
+
+
+<script src="/assets/application-cfde13ac81ddaf4351b2e739603e2baf688d0fcc9aba613fe62bbb1c7b037fb9.js" type="text/javascript"></script>
+
+
+</body>
+</html>
